@@ -91,12 +91,13 @@
       lazygit
       libreoffice
       lxappearance
-      tree
       obsidian
       pavucontrol
+      sioyek
       tealdeer
-      vscode
+      tree
       typst
+      vscode
       zathura
     ];
     shell = pkgs.fish;
@@ -159,6 +160,8 @@
     picom = { 
       enable = true;
       shadow = true;
+      fade = true;
+      fadeDelta = 4;
     };
     pipewire = {
       enable = true;
@@ -180,16 +183,20 @@
       };
     };
     services."wallpaper-change" = {
-      script = ''
-        echo "Changing wallpaper now"
+      serviceConfig = {
+        Type = "oneshot";
+        User = "cognusboi";
+      };
+      path = [
+        pkgs.feh
+      ];
+      script = let 
+        python = pkgs.python3.withPackages (ps: with ps; [ pillow ]);
+      in
+        ''
         cd /home/cognusboi/workspace/programming/python/wallpaper/
-        nix-shell --command "python app.py"
-        echo "Wallpaper change complete"
+        ${python}/bin/python app.py
         '';
-        serviceConfig = {
-          Type = "oneshot";
-          User = "cognusboi";
-        };
     };
     services."network-login" = {
       script = ''
