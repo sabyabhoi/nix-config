@@ -87,18 +87,22 @@
       btop
       discord
       element-desktop
+      feh
       gum
       lazygit
       libreoffice
       lxappearance
+      ncdc
       obsidian
       pavucontrol
+      rstudio
       sioyek
       tealdeer
       tree
       typst
       vscode
       zathura
+      zoom-us
     ];
     shell = pkgs.fish;
   };
@@ -118,6 +122,7 @@
     gcc12
     git
     keepassxc
+    killall
     kitty
     libnotify
     man-pages
@@ -129,9 +134,9 @@
     python3
     rofi
     stow
-    xfce.thunar
     unzip
     xclip
+    xfce.thunar
   ];
 
   location = {
@@ -161,7 +166,7 @@
       enable = true;
       shadow = true;
       fade = true;
-      fadeDelta = 4;
+      fadeDelta = 3;
     };
     pipewire = {
       enable = true;
@@ -177,7 +182,7 @@
     timers."wallpaper-change" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnBootSec = "30m";
+        OnBootSec = "5";
         OnUnitActiveSec = "30m";
         Unit = "wallpaper-change.service";
       };
