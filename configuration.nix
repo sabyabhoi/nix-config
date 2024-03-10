@@ -2,13 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.home-manager
     ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      cognusboi = import ./home.nix;
+    };
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -84,25 +92,6 @@
     description = "Sabyasachi Bhoi";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "storage" ];
     packages = with pkgs; [
-      btop
-      discord
-      element-desktop
-      feh
-      gum
-      lazygit
-      libreoffice
-      lxappearance
-      ncdc
-      obsidian
-      pavucontrol
-      rstudio
-      sioyek
-      tealdeer
-      tree
-      typst
-      vscode
-      zathura
-      zoom-us
     ];
     shell = pkgs.fish;
   };
@@ -114,13 +103,14 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     arandr
+    git
     bat
     brightnessctl
     clang-tools
     dunst
     firefox
     gcc12
-    git
+    home-manager
     keepassxc
     killall
     kitty
@@ -135,6 +125,7 @@
     rofi
     stow
     unzip
+    usbutils
     xclip
     xfce.thunar
   ];
@@ -154,7 +145,7 @@
     vistafonts
     noto-fonts
     roboto
-    (nerdfonts.override { fonts = [ "Iosevka"]; })
+    (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" ]; })
   ];
 
   security.rtkit.enable = true;
@@ -162,11 +153,14 @@
   hardware.bluetooth.enable = true;
 
   services = {
+    gvfs.enable = true;
+    udisks2.enable = true;
     picom = { 
       enable = true;
       shadow = true;
       fade = true;
       fadeDelta = 3;
+      fadeExclude = ["class_g = 'Rofi'"];
     };
     pipewire = {
       enable = true;
