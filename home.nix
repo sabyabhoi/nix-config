@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./modules/nnn.nix
+    ./modules/kitty.nix
+  ];
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
   home.username = "cognusboi";
@@ -19,11 +23,13 @@
 # The home.packages option allows you to install Nix packages into your
 # environment.
     home.packages = with pkgs; [
-      dconf      
       btop
+      dconf      
       discord
       element-desktop
       feh
+      flameshot
+      gimp
       gum
       lazygit
       libreoffice
@@ -31,11 +37,11 @@
       ncdc
       obsidian
       pavucontrol
+      ripgrep
       rstudio
       sioyek
       tealdeer
       tree
-      flameshot
       typst
       vscode
       zathura
@@ -44,6 +50,7 @@
 
   services = {
     udiskie.enable = true;
+    safeeyes.enable = true;
   };
 
   programs = {
@@ -51,16 +58,6 @@
       enable = true;
       userName = "sabyabhoi";
       userEmail = "sabyabhoi@gmail.com";
-    };
-    kitty = {
-      enable = true;
-      font = {
-        name = "Iosevka NFM";
-        size = 15.0;
-      };
-      shellIntegration.enableFishIntegration = true;
-      theme = "VSCode_Dark";
-      extraConfig = "confirm_os_window_close 0";
     };
   };
 

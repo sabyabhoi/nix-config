@@ -23,13 +23,18 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
+    useDHCP = false;
     hostName = "nixos"; 
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
 
     nameservers = [
       "1.1.1.1" "1.0.0.1"
       "2606:4700:4700::1111" "2606:4700:4700::1001"
     ];
+    resolvconf.enable = false;
   };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -113,7 +118,6 @@
     home-manager
     keepassxc
     killall
-    kitty
     libnotify
     man-pages
     mpv
@@ -160,7 +164,6 @@
       shadow = true;
       fade = true;
       fadeDelta = 3;
-      fadeExclude = ["class_g = 'Rofi'"];
     };
     pipewire = {
       enable = true;
