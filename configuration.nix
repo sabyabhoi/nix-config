@@ -22,6 +22,30 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.opengl = {
+    enable = true;    
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    nvidiaPersistenced = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+
+    nvidiaSettings = true;
+
+    #open = true;
+
+    prime = {
+      offload.enable = true;
+
+      amdgpuBusId = "PCI:5:0:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
+
   networking = {
     useDHCP = false;
     hostName = "nixos"; 
@@ -86,12 +110,25 @@
 
     displayManager = {
       defaultSession = "none+i3";
+      autoLogin = {
+        enable = true;
+        user = "cognusboi";
+      };
+      lightdm = {
+        enable = true;
+        greeter.enable = false;
+        autoLogin = {
+          timeout = 0;
+        };
+      };
     };
 
     windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;
     };
+
+    videoDrivers = ["nvidia"];
   };
 
   programs.fish.enable = true;
@@ -100,7 +137,7 @@
   users.users.cognusboi = {
     isNormalUser = true;
     description = "Sabyasachi Bhoi";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "storage" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "storage" "render" ];
     packages = with pkgs; [
     ];
     shell = pkgs.fish;
@@ -113,13 +150,13 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     arandr
-    git
     bat
     brightnessctl
     clang-tools
     dunst
     firefox
     gcc12
+    git
     home-manager
     keepassxc
     killall
