@@ -19,38 +19,48 @@
 # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
 # The home.packages option allows you to install Nix packages into your
 # environment.
-    home.packages = with pkgs; [
-      btop
-      dconf      
-      discord
-      element-desktop
-      feh
-      flameshot
-      gimp
-      gum
-      lazygit
-      libreoffice
-      lxappearance
-      ncdc
-      obsidian
-      pavucontrol
-      ripgrep
-      rstudio
-      sioyek
-      tealdeer
-      tree
-      typst
-      vscode
-      zathura
-      zoom-us
-    ];
+  home.packages = with pkgs; [
+    btop
+    calibre
+    ctags
+    dconf      
+    discord
+    element-desktop
+    feh
+    flameshot
+    gimp
+    gum
+    imv
+    lazygit
+    libreoffice
+    lxappearance
+    ncdc
+    nodePackages.nodejs
+    obsidian
+    pavucontrol
+    ripgrep
+    rstudio
+    sioyek
+    tealdeer
+    tree
+    typst
+    vscode
+    zathura
+    zoom-us
+    zotero
+  ];
 
   services = {
     udiskie.enable = true;
-    safeeyes.enable = true;
+    gammastep = {
+      enable = true;
+      provider = "manual";
+      latitude = 17.38;
+      longitude = 78.48;
+    };
   };
 
   programs = {
@@ -58,6 +68,10 @@
       enable = true;
       userName = "sabyabhoi";
       userEmail = "sabyabhoi@gmail.com";
+    };
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
     };
   };
 

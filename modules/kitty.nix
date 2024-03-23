@@ -9,6 +9,9 @@
     };
     shellIntegration.enableFishIntegration = true;
     theme = "VSCode_Dark";
-    extraConfig = "confirm_os_window_close 0";
+    settings = {
+      disable_ligatures = "never";
+      confirm_os_window_close = 0;
+    };
   };
 }

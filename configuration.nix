@@ -35,6 +35,11 @@
       "2606:4700:4700::1111" "2606:4700:4700::1001"
     ];
     resolvconf.enable = false;
+
+    stevenblack = {
+      enable = true;
+      block = ["porn"];
+    };
   };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -149,7 +154,7 @@
     vistafonts
     noto-fonts
     roboto
-    (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" ]; })
+    (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" "JetBrainsMono" "Meslo" ]; })
   ];
 
   security.rtkit.enable = true;
@@ -169,9 +174,6 @@
       enable = true;
       alsa.enable = true;
       pulse.enable = true;
-    };
-    redshift = {
-      enable = true;
     };
   };
 
