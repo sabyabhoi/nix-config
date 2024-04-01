@@ -61,7 +61,7 @@
     resolvconf.enable = false;
 
     stevenblack = {
-      enable = true;
+      enable = false;
       block = ["porn"];
     };
   };
@@ -185,13 +185,14 @@
     enable = true;
     defaultEditor = true;
   };
+  programs.steam.enable = true;
 
   fonts.packages = with pkgs; [
     corefonts
     vistafonts
     noto-fonts
     roboto
-    (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" "JetBrainsMono" "Meslo" ]; })
+    (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" "JetBrainsMono" "Meslo" "Inconsolata" ]; })
   ];
 
   security.rtkit.enable = true;
@@ -280,5 +281,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
+  nix.settings.auto-optimise-store = true;
+  nix.gc = { automatic = true; dates = "weekly"; options = "--delete-older-than 7d"; }; 
 }

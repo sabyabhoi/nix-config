@@ -19,7 +19,7 @@
 # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-    nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 # The home.packages option allows you to install Nix packages into your
 # environment.
   home.packages = with pkgs; [
@@ -31,7 +31,9 @@
     element-desktop
     feh
     flameshot
+    fzf
     gimp
+    gnome.gnome-font-viewer
     gum
     imv
     lazygit
@@ -51,7 +53,7 @@
     zathura
     zoom-us
     zotero
-  ];
+  ] ++ [(import ./scripts/fonts.nix { inherit pkgs; })];
 
   services = {
     udiskie.enable = true;
