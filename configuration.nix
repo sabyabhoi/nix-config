@@ -22,29 +22,29 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.opengl = {
-    enable = true;    
-    driSupport = true;
-    driSupport32Bit = true;
-  };
+  # hardware.opengl = {
+  #   enable = true;    
+  #   driSupport = true;
+  #   driSupport32Bit = true;
+  # };
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    nvidiaPersistenced = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
-
-    nvidiaSettings = true;
-
-    #open = true;
-
-    prime = {
-      offload.enable = true;
-
-      amdgpuBusId = "PCI:5:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
+  # hardware.nvidia = {
+  #   modesetting.enable = true;
+  #   powerManagement.enable = false;
+  #   nvidiaPersistenced = true;
+  #   package = config.boot.kernelPackages.nvidiaPackages.beta;
+  #
+  #   nvidiaSettings = true;
+  #
+  #   #open = true;
+  #
+  #   prime = {
+  #     offload.enable = true;
+  #
+  #     amdgpuBusId = "PCI:5:0:0";
+  #     nvidiaBusId = "PCI:1:0:0";
+  #   };
+  # };
 
   networking = {
     useDHCP = false;
@@ -128,7 +128,7 @@
       package = pkgs.i3-gaps;
     };
 
-    videoDrivers = ["nvidia"];
+    # videoDrivers = ["nvidia"];
   };
 
   programs.fish.enable = true;
