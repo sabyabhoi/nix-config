@@ -1,6 +1,8 @@
-{ inputs, pkgs, ... }:
-
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.lf = {
     enable = true;
     commands = {
@@ -26,7 +28,7 @@
       nd = "mkdir";
       nf = "mkfile";
       "." = "set hidden!";
-      "<enter>" ="open";
+      "<enter>" = "open";
     };
     settings = {
       preview = true;

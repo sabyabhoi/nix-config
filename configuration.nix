@@ -1,18 +1,20 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ inputs, config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.home-manager
-    ];
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
+  ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users = {
       cognusboi = import ./home.nix;
     };
@@ -22,41 +24,20 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # hardware.opengl = {
-  #   enable = true;    
-  #   driSupport = true;
-  #   driSupport32Bit = true;
-  # };
-
-  # hardware.nvidia = {
-  #   modesetting.enable = true;
-  #   powerManagement.enable = false;
-  #   nvidiaPersistenced = true;
-  #   package = config.boot.kernelPackages.nvidiaPackages.beta;
-  #
-  #   nvidiaSettings = true;
-  #
-  #   #open = true;
-  #
-  #   prime = {
-  #     offload.enable = true;
-  #
-  #     amdgpuBusId = "PCI:5:0:0";
-  #     nvidiaBusId = "PCI:1:0:0";
-  #   };
-  # };
 
   networking = {
     useDHCP = false;
-    hostName = "nixos"; 
+    hostName = "nixos";
     networkmanager = {
       enable = true;
       dns = "none";
     };
 
     nameservers = [
-      "1.1.1.1" "1.0.0.1"
-      "2606:4700:4700::1111" "2606:4700:4700::1001"
+      "1.1.1.1"
+      "1.0.0.1"
+      "2606:4700:4700::1111"
+      "2606:4700:4700::1001"
     ];
     resolvconf.enable = false;
 
@@ -71,7 +52,7 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   fileSystems."/tmp" = {
     fsType = "tmpfs";
@@ -128,7 +109,6 @@
       package = pkgs.i3-gaps;
     };
 
-    # videoDrivers = ["nvidia"];
   };
 
   programs.fish.enable = true;
@@ -137,7 +117,7 @@
   users.users.cognusboi = {
     isNormalUser = true;
     description = "Sabyasachi Bhoi";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "storage" "render" ];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render"];
     packages = with pkgs; [
     ];
     shell = pkgs.fish;
@@ -163,7 +143,7 @@
     libnotify
     man-pages
     mpv
-    neovim 
+    neovim
     nnn
     pamixer
     polybar
@@ -192,7 +172,7 @@
     vistafonts
     noto-fonts
     roboto
-    (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" "JetBrainsMono" "Meslo" "Inconsolata" ]; })
+    (nerdfonts.override {fonts = ["Iosevka" "FiraCode" "JetBrainsMono" "Meslo" "Inconsolata" "RobotoMono"];})
   ];
 
   security.rtkit.enable = true;
@@ -202,7 +182,7 @@
   services = {
     gvfs.enable = true;
     udisks2.enable = true;
-    picom = { 
+    picom = {
       enable = true;
       shadow = true;
       fade = true;
@@ -217,7 +197,7 @@
 
   systemd = {
     timers."wallpaper-change" = {
-      wantedBy = [ "timers.target" ];
+      wantedBy = ["timers.target"];
       timerConfig = {
         OnBootSec = "5";
         OnUnitActiveSec = "30m";
@@ -232,18 +212,17 @@
       path = [
         pkgs.feh
       ];
-      script = let 
-        python = pkgs.python3.withPackages (ps: with ps; [ pillow ]);
-      in
-        ''
+      script = let
+        python = pkgs.python3.withPackages (ps: with ps; [pillow]);
+      in ''
         cd /home/cognusboi/workspace/programming/python/wallpaper/
         ${python}/bin/python app.py
-        '';
+      '';
     };
     services."network-login" = {
       script = ''
         /home/cognusboi/scripts/login
-        '';
+      '';
       serviceConfig = {
         OnCalendar = "daily";
         Persistent = true;
@@ -253,6 +232,8 @@
 
   xdg.mime.defaultApplications = {
     "application/pdf" = "org.pwmt.zathura.desktop";
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
+    "application/vnd.oasis.opendocument.text" = "writer.desktop";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -282,5 +263,9 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
   nix.settings.auto-optimise-store = true;
-  nix.gc = { automatic = true; dates = "weekly"; options = "--delete-older-than 7d"; }; 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 }
