@@ -24,7 +24,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-
   networking = {
     useDHCP = false;
     hostName = "nixos";
@@ -108,7 +107,6 @@
       enable = true;
       package = pkgs.i3-gaps;
     };
-
   };
 
   programs.fish.enable = true;
@@ -148,7 +146,6 @@
     pamixer
     polybar
     python3
-    rofi
     stow
     unzip
     usbutils
@@ -234,6 +231,8 @@
     "application/pdf" = "org.pwmt.zathura.desktop";
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
     "application/vnd.oasis.opendocument.text" = "writer.desktop";
+    "image/jpeg" = "imv.desktop";
+    "image/png" = "imv.desktop";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

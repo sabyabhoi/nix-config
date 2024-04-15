@@ -14,18 +14,17 @@
     powerManagement.enable = false;
     nvidiaPersistenced = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
-  
+
     nvidiaSettings = true;
-  
+
     #open = true;
-  
+
     prime = {
       offload.enable = true;
-  
+
       amdgpuBusId = "PCI:5:0:0";
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 }
-

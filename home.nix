@@ -57,6 +57,8 @@
     ++ [
       (import ./scripts/fonts.nix {inherit pkgs;})
       (import ./scripts/m720.nix {inherit pkgs;})
+      (import ./scripts/m1080.nix {inherit pkgs;})
+      (import ./scripts/rebuild.nix {inherit pkgs;})
     ];
 
   services = {
@@ -79,6 +81,10 @@
       enable = true;
       enableFishIntegration = true;
     };
+    rofi = {
+      enable = true;
+      theme = "Arc-Dark";
+    };
   };
 
   xdg.desktopEntries = {
@@ -86,6 +92,11 @@
       name = "m720";
       terminal = false;
       exec = "/home/cognusboi/.nix-profile/bin/m720";
+    };
+    m1080 = {
+      name = "m1080";
+      terminal = false;
+      exec = "/home/cognusboi/.nix-profile/bin/m1080";
     };
   };
 
