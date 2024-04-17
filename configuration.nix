@@ -11,6 +11,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
+    # inputs.nixvim.homeManagerModules.nixvim
   ];
 
   home-manager = {
@@ -81,31 +82,35 @@
   };
 
   # Configure keymap in X11
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      options = "caps:swapescape";
-    };
-
+  services = {
     displayManager = {
       defaultSession = "none+i3";
       autoLogin = {
         enable = true;
         user = "cognusboi";
       };
-      lightdm = {
-        enable = true;
-        greeter.enable = false;
-        autoLogin = {
-          timeout = 0;
+    };
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        options = "caps:swapescape";
+      };
+
+      displayManager = {
+        lightdm = {
+          enable = true;
+          greeter.enable = false;
+          autoLogin = {
+            timeout = 0;
+          };
         };
       };
-    };
 
-    windowManager.i3 = {
-      enable = true;
-      package = pkgs.i3-gaps;
+      windowManager.i3 = {
+        enable = true;
+        package = pkgs.i3-gaps;
+      };
     };
   };
 
@@ -141,7 +146,6 @@
     libnotify
     man-pages
     mpv
-    neovim
     nnn
     pamixer
     polybar
@@ -169,7 +173,7 @@
     vistafonts
     noto-fonts
     roboto
-    (nerdfonts.override {fonts = ["Iosevka" "FiraCode" "JetBrainsMono" "Meslo" "Inconsolata" "RobotoMono"];})
+    (nerdfonts.override {fonts = ["Iosevka" "FiraCode" "JetBrainsMono" "Inconsolata" "RobotoMono"];})
   ];
 
   security.rtkit.enable = true;
@@ -184,6 +188,33 @@
       shadow = true;
       fade = true;
       fadeDelta = 3;
+      activeOpacity = 0.93;
+      opacityRules = [
+        "100:class_g = 'Brave-browser'"
+        "100:class_g = 'Zathura'"
+        "100:class_g = 'discord'"
+        "100:class_g = 'anytype'"
+        "100:class_g = 'Android Emulator - Pixel_XL_API_30:5554'"
+        "100:class_g = 'Emulator'"
+        "100:class_g = 'Gimp'"
+        "100:class_g = 'AFFiNE'"
+        "100:class_g = 'notion-app'"
+        "100:class_g = 'albert'"
+        "100:class_g = 'firefox'"
+        "100:class_g = 'i3lock'"
+        "100:class_g = 'mpv'"
+        "100:class_g = 'kmines'"
+        "100:class_g = 'zoom'"
+        "100:class_g = 'imv'"
+        "100:class_g = 'sioyek'"
+      ];
+      backend = "glx";
+      settings = {
+        blur = {
+          method = "dual_kawase";
+          strength = 7;
+        };
+      };
     };
     pipewire = {
       enable = true;

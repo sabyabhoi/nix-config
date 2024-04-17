@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   pkgs,
   ...
@@ -6,6 +7,7 @@
   imports = [
     ./modules/nnn.nix
     ./modules/kitty.nix
+    inputs.nixvim.homeManagerModules.nixvim
   ];
   home.username = "cognusboi";
   home.homeDirectory = "/home/cognusboi";
