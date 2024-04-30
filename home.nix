@@ -53,6 +53,7 @@
       typst
       vscode
       zathura
+      zip
       zoom-us
       zotero
     ]

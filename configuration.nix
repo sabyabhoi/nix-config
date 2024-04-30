@@ -11,6 +11,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
+    # ./modules/nvidia.nix
     # inputs.nixvim.homeManagerModules.nixvim
   ];
 
@@ -116,11 +117,13 @@
 
   programs.fish.enable = true;
 
+  virtualisation.docker.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cognusboi = {
     isNormalUser = true;
     description = "Sabyasachi Bhoi";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render" "docker"];
     packages = with pkgs; [
     ];
     shell = pkgs.fish;
@@ -189,6 +192,7 @@
       fade = true;
       fadeDelta = 3;
       activeOpacity = 0.93;
+      inactiveOpacity = 0.95;
       opacityRules = [
         "100:class_g = 'Brave-browser'"
         "100:class_g = 'Zathura'"
@@ -264,6 +268,7 @@
     "application/vnd.oasis.opendocument.text" = "writer.desktop";
     "image/jpeg" = "imv.desktop";
     "image/png" = "imv.desktop";
+    "image/svg+xml" = "imv.desktop";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
