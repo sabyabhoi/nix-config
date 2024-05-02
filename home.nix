@@ -93,6 +93,10 @@
       enableFishIntegration = true;
       nix-direnv.enable = true;
     };
+    zellij = {
+      enable = true;
+      enableFishIntegration = true;
+    };
   };
 
   xdg.desktopEntries = {
