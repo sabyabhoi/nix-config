@@ -21,14 +21,16 @@
 
   home.packages = with pkgs;
     [
-      btop
       (bumblebee-status.override {plugins = p: [p.title p.indicator p.pipewire p.battery p.datetime p.system];})
+      btop
+      brave
       calibre
       ctags
       dconf
       discord
       element-desktop
       feh
+      ffmpeg
       flameshot
       fzf
       gdb

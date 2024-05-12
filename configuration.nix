@@ -140,7 +140,6 @@
     brightnessctl
     clang-tools
     dunst
-    firefox
     gcc12
     git
     home-manager
@@ -169,7 +168,6 @@
     enable = true;
     defaultEditor = true;
   };
-  programs.steam.enable = true;
 
   fonts.packages = with pkgs; [
     corefonts
@@ -269,6 +267,7 @@
     "image/jpeg" = "imv.desktop";
     "image/png" = "imv.desktop";
     "image/svg+xml" = "imv.desktop";
+    "text/html" = "brave.desktop";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
