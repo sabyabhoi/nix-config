@@ -4,29 +4,6 @@
   ...
 }: {
   programs.nixvim = {
-    enable = true;
-    enableMan = true;
-    defaultEditor = true;
-
-    colorschemes.vscode.enable = true;
-
-    clipboard.register = "unnamedplus";
-    opts = {
-      number = true;
-      relativenumber = true;
-
-      shiftwidth = 2;
-      tabstop = 2;
-      expandtab = true;
-
-      breakindent = true;
-      smartindent = true;
-      autoindent = true;
-    };
-
-    globals.mapleader = " ";
-    globals.maplocalleader = " ";
-
     plugins = {
       lualine.enable = true;
       nvim-autopairs.enable = true;
@@ -65,8 +42,7 @@
       };
 
       nvim-tree.enable = true;
-
-      luasnip.enable = true;
+      gitsigns.enable = true;
 
       treesitter = {
         enable = true;
@@ -81,40 +57,24 @@
         };
       };
 
-      lsp = {
+      toggleterm = {
         enable = true;
-        servers = {
-          clangd.enable = true;
-          ruff-lsp.enable = true;
-        };
-      };
-      cmp = {
-        enable = true;
-        autoEnableSources = true;
-        # sources = [
-        #   {name = "nvim_lsp";}
-        #   {name = "path";}
-        #   {name = "buffer";}
-        # ];
-
-        mapping = {
-          "<CR>" = "cmp.mapping.confirm({select = true})";
-          # "<Tab>" = {
-          #   action = ''
-          #     function(fallback)
-          #       if cmp.visible() then
-          #         cmp.select_next_item()
-          #       elseif luasnip.expandable() then
-          #         luasnip.expand()
-          #       elseif luasnip.expand_or_jumpable() then
-          #         luasnip.expand_or_jump()
-          #       else
-          #         fallback()
-          #       end
-          #     end
-          #   '';
-          #   modes = ["i" "s"];
-          # };
+        settings = {
+          direction = "float";
+          close_on_exit = true;
+          size = 20;
+          hide_numbers = true;
+          open_mapping = "[[<C-\\>]]";
+          start_in_insert = true;
+          shading_factor = 2;
+          float_opts = {
+            border = "curved";
+            winblend = 0;
+            highlights = {
+              border = "Normal";
+              background = "Normal";
+            };
+          };
         };
       };
     };
@@ -129,13 +89,22 @@
           hash = "sha256-ABxdZ98W5W6K0rz0z/1I5lXzLCBnth6ozUUQ1W1nvpo=";
         };
       })
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "nui";
+        src = pkgs.fetchFromGitHub {
+          owner = "MunifTanjim";
+          repo = "nui.nvim";
+          rev = "b1b3dcd6ed8f355c78bad3d395ff645be5f8b6ae";
+          hash = "sha256-JRVVRT1CZZTjr58L+gAer7eCg9/fMdAD0YD5ljNwl0Q=";
+        };
+      })
     ];
 
     extraConfigLua = ''
       require('competitest').setup({
-        testcases_directory = "./testcases",
-        maximum_time = 2000,
-      })
+          testcases_directory = "./testcases",
+          maximum_time = 2000,
+          })
     '';
   };
 }

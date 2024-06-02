@@ -113,6 +113,7 @@
         package = pkgs.i3-gaps;
       };
     };
+    blueman.enable = true;
   };
 
   programs.fish.enable = true;

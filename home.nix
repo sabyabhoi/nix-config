@@ -3,11 +3,16 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  nixvim = import (builtins.fetchGit {
+    url = "https://github.com/nix-community/nixvim";
+  });
+in {
   imports = [
     ./modules/nnn.nix
     ./modules/kitty.nix
     inputs.nixvim.homeManagerModules.nixvim
+    ./modules/nixvim
   ];
   home.username = "cognusboi";
   home.homeDirectory = "/home/cognusboi";
@@ -26,6 +31,7 @@
       brave
       calibre
       ctags
+      codeium
       dconf
       discord
       element-desktop
@@ -54,6 +60,7 @@
       tree
       typst
       vscode
+      wine
       zathura
       zip
       zoom-us
