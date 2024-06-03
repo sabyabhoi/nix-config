@@ -29,6 +29,7 @@
             # Navigate in diagnostics
             "<leader>k" = "goto_prev";
             "<leader>j" = "goto_next";
+            "<leader>e" = "open_float";
           };
 
           lspBuf = {
@@ -41,6 +42,17 @@
           };
         };
       };
+
+      lspkind = {
+        # vscode-like pictograms
+        enable = true;
+        cmp = {
+          enable = true;
+          maxWidth = 50;
+          ellipsisChar = "...";
+        };
+      };
+
       cmp = {
         enable = true;
 
@@ -61,6 +73,7 @@
             {name = "path";}
             {name = "nvim_lsp";}
             {name = "luasnip";}
+            {name = "codeium";}
             {
               name = "buffer";
               # Words from other open buffers can also be suggested.

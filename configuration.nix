@@ -165,11 +165,6 @@
     longitude = 78.48;
   };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   fonts.packages = with pkgs; [
     corefonts
     vistafonts
@@ -269,6 +264,7 @@
     "image/png" = "imv.desktop";
     "image/svg+xml" = "imv.desktop";
     "text/html" = "brave.desktop";
+    "application/json" = "nvim.desktop";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -31,7 +31,7 @@ in {
       brave
       calibre
       ctags
-      codeium
+      # codeium
       dconf
       discord
       element-desktop
