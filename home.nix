@@ -11,8 +11,8 @@ in {
   imports = [
     ./modules/nnn.nix
     ./modules/kitty.nix
-    inputs.nixvim.homeManagerModules.nixvim
-    ./modules/nixvim
+    # inputs.nixvim.homeManagerModules.nixvim
+    # ./modules/nixvim
   ];
   home.username = "cognusboi";
   home.homeDirectory = "/home/cognusboi";
@@ -105,6 +105,10 @@ in {
     zellij = {
       enable = true;
       enableFishIntegration = true;
+    };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
     };
   };
 

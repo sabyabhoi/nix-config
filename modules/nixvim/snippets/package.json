@@ -8,6 +8,10 @@
       {
         "language": "cpp",
         "path": "./snippets/cpp/cpp.json"
+      },
+      {
+        "language": "nix",
+        "path": "./snippets/nix/nix.json"
       }
     ]
   }

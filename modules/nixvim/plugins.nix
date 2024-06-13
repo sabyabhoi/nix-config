@@ -47,7 +47,13 @@
         enable = true;
         extraOptions.enable_chat = true;
       };
-      competitest.enable = true;
+      competitest = {
+        enable = true;
+        settings = {
+          maximum_time = 2000;
+          testcases_directory = "./testcases";
+        };
+      };
 
       treesitter = {
         enable = true;

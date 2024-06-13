@@ -73,7 +73,7 @@
             {name = "path";}
             {name = "nvim_lsp";}
             {name = "luasnip";}
-            {name = "codeium";}
+            # {name = "codeium";}
             {
               name = "buffer";
               # Words from other open buffers can also be suggested.

@@ -153,6 +153,7 @@
     pamixer
     polybar
     python3
+    python311Packages.ptpython
     stow
     unzip
     usbutils
@@ -263,7 +264,7 @@
     "image/jpeg" = "imv.desktop";
     "image/png" = "imv.desktop";
     "image/svg+xml" = "imv.desktop";
-    "text/html" = "brave.desktop";
+    "text/html" = "brave-browser.desktop";
     "application/json" = "nvim.desktop";
   };
 
