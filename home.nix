@@ -26,12 +26,13 @@ in {
 
   home.packages = with pkgs;
     [
-      (bumblebee-status.override {plugins = p: [p.title p.indicator p.pipewire p.battery p.datetime p.system];})
-      btop
+      bibata-cursors
       brave
+      btop
+      (bumblebee-status.override {plugins = p: [p.title p.indicator p.pipewire p.battery p.datetime p.system];})
       calibre
-      ctags
       # codeium
+      ctags
       dconf
       discord
       element-desktop
@@ -44,6 +45,7 @@ in {
       gnome.gnome-font-viewer
       gum
       guvcview
+      hyprshot
       imv
       lazygit
       libreoffice
@@ -56,6 +58,7 @@ in {
       rstudio
       ruff
       sioyek
+      swww
       tealdeer
       tree
       typst
@@ -95,6 +98,7 @@ in {
     };
     rofi = {
       enable = true;
+      package = pkgs.rofi-wayland;
       theme = "Arc-Dark";
     };
     direnv = {
@@ -105,11 +109,15 @@ in {
     zellij = {
       enable = true;
       enableFishIntegration = true;
+      settings = {
+        theme = "gruvbox-dark";
+      };
     };
-    neovim = {
+    yazi = {
       enable = true;
-      defaultEditor = true;
+      enableFishIntegration = true;
     };
+    waybar.enable = true;
   };
 
   xdg.desktopEntries = {
@@ -157,6 +165,7 @@ in {
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+    HYPRSHOT_DIR = "/tmp";
   };
 
   # Let Home Manager install and manage itself.

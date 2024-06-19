@@ -11,7 +11,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
-    # ./modules/nvidia.nix
     # inputs.nixvim.homeManagerModules.nixvim
   ];
 
@@ -59,11 +58,6 @@
     fsType = "tmpfs";
   };
 
-  fileSystems."/home/cognusboi/workspace" = {
-    device = "/dev/sda1";
-    fsType = "ext4";
-  };
-
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
@@ -85,7 +79,7 @@
   # Configure keymap in X11
   services = {
     displayManager = {
-      defaultSession = "none+i3";
+      defaultSession = "hyprland";
       autoLogin = {
         enable = true;
         user = "cognusboi";
@@ -108,17 +102,23 @@
         };
       };
 
-      windowManager.i3 = {
-        enable = true;
-        package = pkgs.i3-gaps;
-      };
+      # windowManager.i3 = {
+      #   enable = true;
+      # };
     };
     blueman.enable = true;
   };
 
-  programs.fish.enable = true;
+  programs = {
+    hyprland.enable = true;
+    fish.enable = true;
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+  };
 
-  virtualisation.docker.enable = true;
+  #virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cognusboi = {
@@ -186,8 +186,8 @@
       shadow = true;
       fade = true;
       fadeDelta = 3;
-      activeOpacity = 0.93;
-      inactiveOpacity = 0.95;
+      activeOpacity = 0.95;
+      inactiveOpacity = 0.93;
       opacityRules = [
         "100:class_g = 'Brave-browser'"
         "100:class_g = 'Zathura'"
@@ -237,23 +237,14 @@
         User = "cognusboi";
       };
       path = [
-        pkgs.feh
+        # pkgs.swww
       ];
       script = let
         python = pkgs.python3.withPackages (ps: with ps; [pillow]);
       in ''
-        cd /home/cognusboi/workspace/programming/python/wallpaper/
+        cd /home/cognusboi/programming/python/wallquote/
         ${python}/bin/python app.py
       '';
-    };
-    services."network-login" = {
-      script = ''
-        /home/cognusboi/scripts/login
-      '';
-      serviceConfig = {
-        OnCalendar = "daily";
-        Persistent = true;
-      };
     };
   };
 
