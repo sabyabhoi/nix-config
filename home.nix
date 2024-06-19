@@ -48,6 +48,8 @@ in {
       hyprshot
       imv
       lazygit
+      grim
+      slurp
       libreoffice
       lxappearance
       ncdc
@@ -64,6 +66,7 @@ in {
       typst
       vscode
       wine
+      wl-clipboard
       zathura
       zip
       zoom-us
@@ -166,6 +169,7 @@ in {
   home.sessionVariables = {
     # EDITOR = "emacs";
     HYPRSHOT_DIR = "/tmp";
+    GTK_THEME = "Adwaita-dark";
   };
 
   # Let Home Manager install and manage itself.

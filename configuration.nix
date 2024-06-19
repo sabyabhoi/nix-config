@@ -79,7 +79,7 @@
   # Configure keymap in X11
   services = {
     displayManager = {
-      defaultSession = "hyprland";
+      defaultSession = "sway";
       autoLogin = {
         enable = true;
         user = "cognusboi";
@@ -110,7 +110,7 @@
   };
 
   programs = {
-    hyprland.enable = true;
+    sway.enable = true;
     fish.enable = true;
     neovim = {
       enable = true;
