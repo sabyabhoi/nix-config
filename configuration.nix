@@ -42,7 +42,7 @@
     resolvconf.enable = false;
 
     stevenblack = {
-      enable = false;
+      enable = true;
       block = ["porn"];
     };
   };
@@ -110,7 +110,10 @@
   };
 
   programs = {
-    sway.enable = true;
+    sway = {
+      enable = true;
+      package = pkgs.swayfx;
+    };
     fish.enable = true;
     neovim = {
       enable = true;
@@ -156,10 +159,16 @@
     python311Packages.ptpython
     stow
     unzip
+    unrar
     usbutils
     xclip
     xfce.thunar
   ];
+  environment.sessionVariables = rec {
+    HYPRSHOT_DIR = "/tmp";
+    GTK_THEME = "Adwaita-dark";
+    NIXOS_OZONE_WL = "1";
+  };
 
   location = {
     latitude = 17.38;
@@ -171,7 +180,7 @@
     vistafonts
     noto-fonts
     roboto
-    (nerdfonts.override {fonts = ["Iosevka" "FiraCode" "JetBrainsMono" "Inconsolata" "RobotoMono"];})
+    (nerdfonts.override {fonts = ["Iosevka" "FiraCode" "JetBrainsMono" "Inconsolata" "RobotoMono" "Monaspace"];})
   ];
 
   security.rtkit.enable = true;
@@ -248,6 +257,8 @@
     };
   };
 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
   xdg.mime.defaultApplications = {
     "application/pdf" = "org.pwmt.zathura.desktop";
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";

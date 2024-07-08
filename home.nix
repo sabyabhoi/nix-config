@@ -33,23 +33,25 @@ in {
       calibre
       # codeium
       ctags
+      firefox
       dconf
       discord
       element-desktop
       feh
       ffmpeg
+      fh
       flameshot
+      font-awesome
       fzf
       gdb
       gimp
       gnome.gnome-font-viewer
+      grim
       gum
       guvcview
       hyprshot
       imv
       lazygit
-      grim
-      slurp
       libreoffice
       lxappearance
       ncdc
@@ -60,10 +62,13 @@ in {
       rstudio
       ruff
       sioyek
+      slurp
+      swayidle
       swww
       tealdeer
       tree
       typst
+      vlc
       vscode
       wine
       wl-clipboard
@@ -112,15 +117,16 @@ in {
     zellij = {
       enable = true;
       enableFishIntegration = true;
-      settings = {
-        theme = "gruvbox-dark";
-      };
     };
     yazi = {
       enable = true;
       enableFishIntegration = true;
     };
     waybar.enable = true;
+    swaylock = {
+      enable = true;
+      package = pkgs.swaylock-effects;
+    };
   };
 
   xdg.desktopEntries = {
@@ -168,8 +174,6 @@ in {
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-    HYPRSHOT_DIR = "/tmp";
-    GTK_THEME = "Adwaita-dark";
   };
 
   # Let Home Manager install and manage itself.
