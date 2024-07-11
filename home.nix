@@ -73,6 +73,7 @@ in {
       wine
       wl-clipboard
       zathura
+      zed-editor
       zip
       zoom-us
       zotero
@@ -93,6 +94,10 @@ in {
       longitude = 78.48;
     };
   };
+
+  # wayland.windowManager.sway = {
+  #   enable = true;
+  # };
 
   programs = {
     git = {
