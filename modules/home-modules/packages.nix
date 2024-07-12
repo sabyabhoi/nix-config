@@ -12,7 +12,6 @@
       btop
       (bumblebee-status.override {plugins = p: [p.title p.indicator p.pipewire p.battery p.datetime p.system];})
       calibre
-      # codeium
       ctags
       firefox
       dconf

@@ -66,6 +66,8 @@
             "<C-e>" = "cmp.mapping.close()";
             "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
             "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+            "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            "<C-p>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
             "<CR>" = "cmp.mapping.confirm({ select = true })";
           };
 
@@ -73,7 +75,6 @@
             {name = "path";}
             {name = "nvim_lsp";}
             {name = "luasnip";}
-            # {name = "codeium";}
             {
               name = "buffer";
               # Words from other open buffers can also be suggested.

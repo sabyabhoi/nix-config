@@ -1,6 +1,5 @@
 {
   programs.nixvim = {
-    colorschemes.vscode.enable = true;
 
     clipboard.register = "unnamedplus";
 
@@ -15,6 +14,9 @@
       breakindent = true;
       smartindent = true;
       autoindent = true;
+
+      smartcase = true;
+      ignorecase = true;
     };
   };
 }

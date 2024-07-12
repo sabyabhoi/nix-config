@@ -5,7 +5,18 @@
 }: {
   programs.nixvim = {
     plugins = {
-      lualine.enable = true;
+      lualine = {
+        enable = true;
+        iconsEnabled = true;
+        componentSeparators = {
+          left = "|";
+          right = "|";
+        };
+        sectionSeparators = {
+          left = "";
+          right = "";
+        };
+      };
       nvim-autopairs.enable = true;
 
       bufferline = {
@@ -43,10 +54,6 @@
 
       nvim-tree.enable = true;
       gitsigns.enable = true;
-      codeium-nvim = {
-        enable = true;
-        extraOptions.enable_chat = true;
-      };
       competitest = {
         enable = true;
         settings = {
@@ -57,7 +64,7 @@
 
       treesitter = {
         enable = true;
-        ensureInstalled = ["c" "cpp" "python" "go" "rust"];
+        ensureInstalled = ["c" "cpp" "python" "go" "rust" "nix" "kdl" "json"];
       };
 
       telescope = {
@@ -89,5 +96,7 @@
         };
       };
     };
+    extraPlugins = [pkgs.vimPlugins.jellybeans-nvim];
+    extraConfigLua = "vim.cmd.colorscheme 'jellybeans-nvim'";
   };
 }

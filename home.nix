@@ -3,17 +3,13 @@
   config,
   pkgs,
   ...
-}: let
-  nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-  });
-in {
+}: {
   imports = [
     ./modules/home-modules/nnn.nix
     ./modules/home-modules/kitty.nix
     ./modules/home-modules/packages.nix
-    # inputs.nixvim.homeManagerModules.nixvim
-    # ./modules/nixvim
+    inputs.nixvim.homeManagerModules.nixvim
+    ./modules/nixvim
   ];
   home.username = "cognusboi";
   home.homeDirectory = "/home/cognusboi";

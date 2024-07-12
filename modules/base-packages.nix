@@ -13,8 +13,8 @@
     };
     fish.enable = true;
     neovim = {
-      enable = true;
-      defaultEditor = true;
+      enable = false;
+      defaultEditor = false;
     };
   };
 

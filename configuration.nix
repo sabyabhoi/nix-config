@@ -14,7 +14,6 @@
     ./modules/locale.nix
     ./modules/systemd-timers.nix
     ./modules/base-packages.nix
-    # inputs.nixvim.homeManagerModules.nixvim
   ];
 
   home-manager = {
