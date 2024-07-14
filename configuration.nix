@@ -1,6 +1,5 @@
 {
   inputs,
-  config,
   pkgs,
   ...
 }: {
@@ -41,8 +40,7 @@
     isNormalUser = true;
     description = "Sabyasachi Bhoi";
     extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render" "docker"];
-    packages = with pkgs; [
-    ];
+    packages = [];
     shell = pkgs.fish;
   };
 
@@ -50,6 +48,8 @@
     HYPRSHOT_DIR = "/tmp";
     GTK_THEME = "Adwaita-dark";
     NIXOS_OZONE_WL = "1";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
   security.rtkit.enable = true;

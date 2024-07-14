@@ -1,15 +1,10 @@
-{
-  inputs,
-  config,
-  pkgs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     ./modules/home-modules/nnn.nix
     ./modules/home-modules/kitty.nix
     ./modules/home-modules/packages.nix
     inputs.nixvim.homeManagerModules.nixvim
-    ./modules/nixvim
+    ./modules/home-modules/nixvim
   ];
   home.username = "cognusboi";
   home.homeDirectory = "/home/cognusboi";

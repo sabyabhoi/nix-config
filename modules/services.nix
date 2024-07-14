@@ -17,16 +17,6 @@
         layout = "us";
         options = "caps:swapescape";
       };
-
-      displayManager = {
-        lightdm = {
-          enable = true;
-          greeter.enable = false;
-          autoLogin = {
-            timeout = 0;
-          };
-        };
-      };
     };
     auto-cpufreq = {
       enable = true;

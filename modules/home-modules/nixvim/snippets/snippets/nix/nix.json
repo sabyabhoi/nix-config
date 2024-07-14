@@ -24,5 +24,16 @@
       "}"
     ],
     "description": "Basic Python Flake"
+  },
+  "module": {
+    "prefix": "module",
+    "body": [
+      "{ inputs, pkgs, ... }:",
+      "",
+      "{",
+      "  $1",
+      "}"
+    ],
+    "description": "Basic configuration module"
   }
 }

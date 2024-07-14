@@ -18,10 +18,5 @@
       "2606:4700:4700::1001"
     ];
     resolvconf.enable = false;
-
-    stevenblack = {
-      enable = true;
-      block = ["porn"];
-    };
   };
 }

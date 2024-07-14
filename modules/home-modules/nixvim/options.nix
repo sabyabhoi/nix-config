@@ -1,6 +1,5 @@
 {
   programs.nixvim = {
-
     clipboard.register = "unnamedplus";
 
     opts = {
@@ -17,6 +16,18 @@
 
       smartcase = true;
       ignorecase = true;
+    };
+
+    diagnostics = {
+      virtual_text = false;
+      float = {
+        focusable = false;
+        style = "minimal";
+        border = "rounded";
+        source = "always";
+        header = "";
+        prefix = "";
+      };
     };
   };
 }

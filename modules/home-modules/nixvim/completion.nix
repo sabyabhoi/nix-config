@@ -22,6 +22,7 @@
           clangd.enable = true;
           ruff-lsp.enable = true;
           jsonls.enable = true;
+          nixd.enable = true;
         };
         keymaps = {
           silent = true;
