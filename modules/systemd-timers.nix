@@ -39,7 +39,7 @@
           User = "cognusboi";
           Environment = "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus";
         };
-        path = [ ];
+        path = [];
         script = ''
           ${pkgs.libnotify}/bin/notify-send "Drink some water"
         '';

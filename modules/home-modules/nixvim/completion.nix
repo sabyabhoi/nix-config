@@ -65,7 +65,19 @@
             "<C-f>" = "cmp.mapping.scroll_docs(4)";
             "<C-Space>" = "cmp.mapping.complete()";
             "<C-e>" = "cmp.mapping.close()";
-            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            "<Tab>" = ''
+              cmp.mapping(function(fallback)
+                if cmp.visible() and has_words_before() then
+                  cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+                elseif cmp.visible() then
+                  cmp.select_next_item()
+                elseif require('luasnip').expand_or_locally_jumpable() then
+                  require('luasnip').expand_or_jump()
+                else
+                  fallback()
+                end
+              end, { 'i', 's' }),
+            '';
             "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
             "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
             "<C-p>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
