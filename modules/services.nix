@@ -4,6 +4,14 @@
   ...
 }: {
   services = {
+    emacs = {
+      enable = true;
+      package = with pkgs; (
+        (emacsPackagesFor emacsNativeComp).emacsWithPackages (
+          epkgs: [epkgs.vterm]
+        )
+      );
+    };
     displayManager = {
       defaultSession = "sway";
       autoLogin = {

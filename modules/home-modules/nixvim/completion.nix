@@ -18,9 +18,23 @@
 
       lsp = {
         enable = true;
+        inlayHints = false;
         servers = {
           clangd.enable = true;
-          ruff-lsp.enable = true;
+          gopls.enable = true;
+          rust_analyzer = {
+            enable = true;
+            autostart = true;
+            installCargo = false;
+            installRustc = false;
+            settings.cargo.features = "all";
+          };
+          gleam.enable = true;
+          pyright.enable = true;
+          pest_ls = {
+            enable = true;
+            autostart = true;
+          };
           jsonls.enable = true;
           nixd.enable = true;
         };
@@ -34,12 +48,13 @@
           };
 
           lspBuf = {
+            ga = "code_action";
             gd = "definition";
             gD = "references";
             gt = "type_definition";
             gi = "implementation";
             K = "hover";
-            rn = "rename";
+            "<leader>rn" = "rename";
           };
         };
       };
@@ -60,6 +75,11 @@
         settings = {
           snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
 
+          window = {
+            completion = {border = "single";};
+            documentation = {border = "single";};
+          };
+
           mapping = {
             "<C-d>" = "cmp.mapping.scroll_docs(-4)";
             "<C-f>" = "cmp.mapping.scroll_docs(4)";
@@ -67,6 +87,10 @@
             "<C-e>" = "cmp.mapping.close()";
             "<Tab>" = ''
               cmp.mapping(function(fallback)
+                local has_words_before = function()
+                  local cursor = vim.api.nvim_win_get_cursor(0)
+                  return (vim.api.nvim_buf_get_lines(0, cursor[1] - 1, cursor[1], true)[1] or ""):sub(cursor[2], cursor[2]):match('%s')
+                end
                 if cmp.visible() and has_words_before() then
                   cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
                 elseif cmp.visible() then

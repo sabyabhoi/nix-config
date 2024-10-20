@@ -6,7 +6,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "MonaspiceAr NFM";
+      name = "JetBrainsMono Nerd Font";
       size = 15.0;
     };
     shellIntegration.enableFishIntegration = true;

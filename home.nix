@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ./modules/home-modules/nnn.nix
     ./modules/home-modules/kitty.nix

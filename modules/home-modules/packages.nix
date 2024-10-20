@@ -7,25 +7,24 @@
 
   home.packages = with pkgs;
     [
-      bibata-cursors
       brave
       btop
-      (bumblebee-status.override {plugins = p: [p.title p.indicator p.pipewire p.battery p.datetime p.system];})
-      calibre
+      # calibre
       ctags
-      firefox
       dconf
       discord
       element-desktop
+      fd
       feh
       ffmpeg
-      fh
+      firefox
       flameshot
       font-awesome
       fzf
       gdb
+      geist-font
       gimp
-      gnome.gnome-font-viewer
+      gnome-font-viewer
       grim
       gum
       guvcview
@@ -43,6 +42,8 @@
       ruff
       sioyek
       slurp
+      steam
+      steam-run
       swayidle
       swww
       tealdeer
@@ -66,6 +67,10 @@
     ];
 
   programs = {
+    java = {
+      enable = true;
+      # package = pkgs.oraclejdk8;
+    };
     git = {
       enable = true;
       userName = "sabyabhoi";
@@ -97,6 +102,10 @@
     swaylock = {
       enable = true;
       package = pkgs.swaylock-effects;
+    };
+    eza = {
+      enable = true;
+      icons = "auto";
     };
     home-manager.enable = true;
   };

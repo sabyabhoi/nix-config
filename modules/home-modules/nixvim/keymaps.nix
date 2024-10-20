@@ -30,6 +30,7 @@
           "<Leader>cd" = ":CompetiTest delete_testcase<CR>";
 
           "<Leader>n" = ":NvimTreeToggle<CR>";
+          "<Leader>." = ":NvimTreeToggle<CR>";
         };
       visual =
         lib.mapAttrsToList
@@ -43,7 +44,7 @@
           ">" = ">gv";
         };
     in
-      config.nixvim.helpers.keymaps.mkKeymaps
+      config.lib.nixvim.keymaps.mkKeymaps
       {options.silent = true;}
       (normal
         ++ visual

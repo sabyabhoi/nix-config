@@ -20,13 +20,15 @@
 
     diagnostics = {
       virtual_text = false;
+      update_in_insert = true;
+      signs = true;
       float = {
         focusable = false;
         style = "minimal";
         border = "rounded";
         source = "always";
-        header = "";
-        prefix = "";
+        # header = "";
+        # prefix = "";
       };
     };
   };

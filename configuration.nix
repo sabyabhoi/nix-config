@@ -13,6 +13,7 @@
     ./modules/locale.nix
     ./modules/systemd-timers.nix
     ./modules/base-packages.nix
+    ./modules/virtualization.nix
   ];
 
   home-manager = {
@@ -39,7 +40,7 @@
   users.users.cognusboi = {
     isNormalUser = true;
     description = "Sabyasachi Bhoi";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render" "docker"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render" "docker" "libvirtd" "kvm"];
     packages = [];
     shell = pkgs.fish;
   };
@@ -58,10 +59,4 @@
   hardware.bluetooth.enable = true;
 
   system.stateVersion = "23.11";
-  nix.settings.auto-optimise-store = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
 }

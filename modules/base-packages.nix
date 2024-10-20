@@ -29,6 +29,7 @@
     gcc12
     git
     home-manager
+    iproute2
     keepassxc
     killall
     libnotify
@@ -40,8 +41,8 @@
     python3
     python311Packages.ptpython
     stow
-    unzip
     unrar
+    unzip
     usbutils
     xclip
     xfce.thunar

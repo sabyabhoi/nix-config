@@ -7,21 +7,23 @@
     plugins = {
       lualine = {
         enable = true;
-        iconsEnabled = true;
-        componentSeparators = {
-          left = "|";
-          right = "|";
-        };
-        sectionSeparators = {
-          left = "";
-          right = "";
+        settings.options = {
+          icons_enabled = true;
+          component_separators = {
+            left = "|";
+            right = "|";
+          };
+          section_separators = {
+            left = "";
+            right = "";
+          };
         };
       };
       nvim-autopairs.enable = true;
 
       bufferline = {
         enable = true;
-        separatorStyle = "slant";
+        settings.options.separator_style = "slant";
       };
 
       comment = {
@@ -53,7 +55,55 @@
       };
 
       nvim-tree.enable = true;
-      gitsigns.enable = true;
+      gitsigns = {
+        enable = true;
+        settings.on_attach = ''
+          function(bufnr)
+            local gitsigns = require('gitsigns')
+
+            local function map(mode, l, r, opts)
+              opts = opts or {}
+              opts.buffer = bufnr
+              vim.keymap.set(mode, l, r, opts)
+            end
+
+            -- Navigation
+            map('n', ']c', function()
+              if vim.wo.diff then
+                vim.cmd.normal({']c', bang = true})
+              else
+                gitsigns.nav_hunk('next')
+              end
+            end)
+
+            map('n', '[c', function()
+              if vim.wo.diff then
+                vim.cmd.normal({'[c', bang = true})
+              else
+                gitsigns.nav_hunk('prev')
+              end
+            end)
+
+            -- Actions
+            map('n', '<leader>hs', gitsigns.stage_hunk)
+            map('n', '<leader>hr', gitsigns.reset_hunk)
+            map('v', '<leader>hs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+            map('v', '<leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+            map('n', '<leader>hS', gitsigns.stage_buffer)
+            map('n', '<leader>hu', gitsigns.undo_stage_hunk)
+            map('n', '<leader>hR', gitsigns.reset_buffer)
+            map('n', '<leader>hp', gitsigns.preview_hunk)
+            map('n', '<leader>hb', function() gitsigns.blame_line{full=true} end)
+            map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
+            map('n', '<leader>hd', gitsigns.diffthis)
+            map('n', '<leader>hD', function() gitsigns.diffthis('~') end)
+            map('n', '<leader>td', gitsigns.toggle_deleted)
+
+            -- Text object
+            map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+          end
+        '';
+      };
       competitest = {
         enable = true;
         settings = {
@@ -64,7 +114,10 @@
 
       treesitter = {
         enable = true;
-        ensureInstalled = ["c" "cpp" "python" "go" "rust" "nix" "kdl" "json"];
+        settings = {
+          ensure_installed = ["c" "cpp" "python" "go" "rust" "nix" "kdl" "json" "gleam"];
+          highlight.enable = true;
+        };
       };
 
       telescope = {
@@ -95,6 +148,17 @@
           };
         };
       };
+      vim-slime = {
+        enable = true;
+        settings = {
+          target = "zellij";
+          default_config = {
+            session_id = "current";
+            relative_pane = "right";
+          };
+        };
+      };
+      which-key.enable = true;
     };
     extraPlugins = [pkgs.vimPlugins.jellybeans-nvim];
     extraConfigLua = ''
