@@ -13,11 +13,14 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
     self,
     nixpkgs,
+    stylix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -26,6 +29,7 @@
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs system;};
       modules = [
+        stylix.nixosModules.stylix
         ./configuration.nix
       ];
     };
