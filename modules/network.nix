@@ -18,5 +18,9 @@
       "2606:4700:4700::1001"
     ];
     resolvconf.enable = false;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [80 443 20];
+    };
   };
 }

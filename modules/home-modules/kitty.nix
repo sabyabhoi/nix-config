@@ -10,7 +10,7 @@
       size = 15.0;
     };
     shellIntegration.enableFishIntegration = true;
-    theme = "Jellybeans";
+    themeFile = "Catppuccin-Mocha";
     settings = {
       disable_ligatures = "never";
       confirm_os_window_close = 0;

@@ -22,6 +22,7 @@
         servers = {
           clangd.enable = true;
           gopls.enable = true;
+          metals.enable = false; # for scala
           rust_analyzer = {
             enable = true;
             autostart = true;

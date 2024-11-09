@@ -1,6 +1,10 @@
 {
   programs.nixvim = {
     clipboard.register = "unnamedplus";
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = "mocha";
+    };
 
     opts = {
       number = true;

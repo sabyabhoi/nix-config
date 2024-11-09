@@ -20,6 +20,7 @@
         };
       };
       nvim-autopairs.enable = true;
+      web-devicons.enable = true;
 
       bufferline = {
         enable = true;
@@ -126,6 +127,7 @@
           "<leader>sg" = "live_grep";
           "<leader>sf" = "find_files";
         };
+        extensions.ui-select.enable = true;
       };
 
       toggleterm = {
@@ -159,10 +161,11 @@
         };
       };
       which-key.enable = true;
+      render-markdown.enable = true;
     };
     extraPlugins = [pkgs.vimPlugins.jellybeans-nvim];
     extraConfigLua = ''
-      vim.cmd.colorscheme 'jellybeans-nvim'
+      -- vim.cmd.colorscheme 'jellybeans-nvim'
       local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
