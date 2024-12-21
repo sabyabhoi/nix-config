@@ -7,9 +7,10 @@
 
   home.packages = with pkgs;
     [
+      audacity
       brave
       btop
-      # calibre
+      calibre
       ctags
       dconf
       discord
@@ -22,39 +23,36 @@
       font-awesome
       fzf
       gdb
-      geist-font
       gimp
       gnome-font-viewer
       grim
-      gum
+      godot_4
       guvcview
+      postman
       hyprshot
       imv
       lazygit
       libreoffice
       lxappearance
-      ncdc
       nodePackages.nodejs
       obsidian
       pavucontrol
       ripgrep
-      rstudio
       ruff
       sioyek
       slurp
-      steam
+      # steam
       steam-run
       swayidle
       swww
       tealdeer
-      tree
       typst
+      vesktop
       vlc
       vscode
       wine
       wl-clipboard
       zathura
-      zed-editor
       zip
       zoom-us
       zotero
@@ -83,6 +81,10 @@
     rofi = {
       enable = true;
       package = pkgs.rofi-wayland;
+      extraConfig = {
+        display-drun = "Applications: ";
+        modi = "window,run,drun";
+      };
     };
     direnv = {
       enable = true;
@@ -92,6 +94,10 @@
     zellij = {
       enable = true;
       enableFishIntegration = true;
+      settings = {
+        default_layout = "compact";
+        pane_frames = false;
+      };
     };
     yazi = {
       enable = true;

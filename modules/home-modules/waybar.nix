@@ -28,7 +28,8 @@
           format-ethernet = " {ifname}";
           format-linked = "{ifname} (No IP) ";
           format = "";
-          format-disconnected = " Disconnected";
+          format-muted = " ";
+          format-disconnected = "  Disconnected";
           format-alt = "{ifname}= {ipaddr}/{cidr}";
           on-click = "sleep 0.1 && bash ~/.config/rofi/rofi-wifi-menu.sh";
           on-click-right = "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [=space=] | cut -c6-)";

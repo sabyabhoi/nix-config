@@ -16,6 +16,7 @@
       enable = false;
       defaultEditor = false;
     };
+    steam.enable = true;
   };
 
   # List packages installed in system profile. To search, run:
@@ -25,7 +26,6 @@
     bat
     brightnessctl
     clang-tools
-    dunst
     gcc12
     git
     home-manager
@@ -53,6 +53,9 @@
     vistafonts
     noto-fonts
     roboto
-    (nerdfonts.override {fonts = ["Iosevka" "FiraCode" "JetBrainsMono" "Inconsolata" "RobotoMono" "Monaspace"];})
+    nerd-fonts.iosevka
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.inconsolata
+    nerd-fonts.roboto-mono
   ];
 }

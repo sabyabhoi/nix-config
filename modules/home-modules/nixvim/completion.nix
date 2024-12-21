@@ -22,7 +22,12 @@
         servers = {
           clangd.enable = true;
           gopls.enable = true;
-          metals.enable = false; # for scala
+          elixirls.enable = true;
+          ocamllsp = {
+            enable = true;
+            package = null;
+          };
+          metals.enable = true; # for scala
           rust_analyzer = {
             enable = true;
             autostart = true;
@@ -110,6 +115,7 @@
           };
 
           sources = [
+            {name = "codeium";}
             {name = "path";}
             {name = "nvim_lsp";}
             {name = "luasnip";}

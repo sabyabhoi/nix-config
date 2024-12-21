@@ -14,7 +14,7 @@
 
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
       };
       serif = config.stylix.fonts.monospace;
@@ -26,11 +26,6 @@
         desktop = 12;
         popups = 12;
       };
-    };
-
-    cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
     };
   };
 }

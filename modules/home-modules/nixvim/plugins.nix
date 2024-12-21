@@ -87,14 +87,14 @@
 
             -- Actions
             map('n', '<leader>hs', gitsigns.stage_hunk)
-            map('n', '<leader>hr', gitsigns.reset_hunk)
+            map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'Reset Hunk' })
             map('v', '<leader>hs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-            map('v', '<leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+            map('v', '<leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = 'Reset Hunk' })
             map('n', '<leader>hS', gitsigns.stage_buffer)
             map('n', '<leader>hu', gitsigns.undo_stage_hunk)
             map('n', '<leader>hR', gitsigns.reset_buffer)
-            map('n', '<leader>hp', gitsigns.preview_hunk)
-            map('n', '<leader>hb', function() gitsigns.blame_line{full=true} end)
+            map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Preview Hunk' })
+            map('n', '<leader>hb', function() gitsigns.blame_line{full=true} end, { desc = 'Blame Hunk' })
             map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
             map('n', '<leader>hd', gitsigns.diffthis)
             map('n', '<leader>hD', function() gitsigns.diffthis('~') end)
@@ -127,7 +127,10 @@
           "<leader>sg" = "live_grep";
           "<leader>sf" = "find_files";
         };
-        extensions.ui-select.enable = true;
+        extensions = {
+          ui-select.enable = true;
+          fzf-native.enable = true;
+        };
       };
 
       toggleterm = {
@@ -162,6 +165,15 @@
       };
       which-key.enable = true;
       render-markdown.enable = true;
+      # codeium-nvim.enable = true;
+      nvim-ufo = {
+        enable = true;
+        settings.provider_selector = ''
+          function(bufnr, filetype, buftype)
+            return {'treesitter', 'indent'}
+          end
+        '';
+      };
     };
     extraPlugins = [pkgs.vimPlugins.jellybeans-nvim];
     extraConfigLua = ''

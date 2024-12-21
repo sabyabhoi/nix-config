@@ -20,6 +20,13 @@
 
       smartcase = true;
       ignorecase = true;
+
+      colorcolumn = "80";
+
+      foldcolumn = "0";
+      foldlevel = 99;
+      foldlevelstart = 99;
+      foldenable = true;
     };
 
     diagnostics = {
