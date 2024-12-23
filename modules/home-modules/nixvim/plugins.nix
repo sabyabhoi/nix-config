@@ -125,7 +125,8 @@
         enable = true;
         keymaps = {
           "<leader>sg" = "live_grep";
-          "<leader>sf" = "find_files";
+          "<leader>b" = "buffers";
+          "<leader>d" = "lsp_document_symbols";
         };
         extensions = {
           ui-select.enable = true;

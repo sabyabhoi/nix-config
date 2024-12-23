@@ -23,6 +23,10 @@
           clangd.enable = true;
           gopls.enable = true;
           elixirls.enable = true;
+          intelephense = {
+            enable = true;
+            package = pkgs.intelephense;
+          };
           ocamllsp = {
             enable = true;
             package = null;
