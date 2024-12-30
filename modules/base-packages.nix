@@ -37,7 +37,6 @@
     mpv
     nnn
     pamixer
-    polybar
     python3
     python311Packages.ptpython
     stow

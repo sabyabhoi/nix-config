@@ -175,6 +175,7 @@
           end
         '';
       };
+      emmet.enable = true;
     };
     extraPlugins = [pkgs.vimPlugins.jellybeans-nvim];
     extraConfigLua = ''

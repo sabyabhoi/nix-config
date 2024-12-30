@@ -14,7 +14,6 @@
       ctags
       dconf
       discord
-      element-desktop
       fd
       feh
       ffmpeg
@@ -41,7 +40,6 @@
       ruff
       sioyek
       slurp
-      # steam
       steam-run
       swayidle
       swww
@@ -55,7 +53,6 @@
       zathura
       zip
       zoom-us
-      zotero
     ]
     ++ [
       (import ../scripts/fonts.nix {inherit pkgs;})
