@@ -14,6 +14,7 @@
     ./modules/systemd-timers.nix
     ./modules/base-packages.nix
     ./modules/virtualization.nix
+    ./modules/stylix.nix
   ];
 
   home-manager = {
@@ -61,17 +62,6 @@
     CARGO_HOME = "${XDG_DATA_HOME}/cargo";
     DOCKER_CONFIG = "${XDG_CONFIG_HOME}/docker";
     _JAVA_OPTIONS = "-Djavafx.cachedir=${XDG_CACHE_HOME}/openjfx";
-  };
-
-  stylix = {
-    enable = true;
-    image = ./modules/home-modules/0002-doom.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-
-    cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-    };
   };
 
   security.rtkit.enable = true;
