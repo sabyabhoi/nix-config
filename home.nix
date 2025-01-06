@@ -9,6 +9,7 @@
     ./modules/home-modules/kitty.nix
     ./modules/home-modules/lf.nix
     ./modules/home-modules/dunst.nix
+    ./modules/home-modules/ghostty.nix
     ./modules/home-modules/packages.nix
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/home-modules/nixvim
@@ -19,7 +20,7 @@
   home.stateVersion = "23.11";
 
   services = {
-    udiskie.enable = true;
+    # udiskie.enable = true;
     gammastep = {
       enable = true;
       provider = "manual";

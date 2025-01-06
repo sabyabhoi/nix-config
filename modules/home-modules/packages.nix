@@ -13,7 +13,6 @@
       calibre
       ctags
       dconf
-      discord
       fd
       feh
       ffmpeg

@@ -166,7 +166,7 @@
       };
       which-key.enable = true;
       render-markdown.enable = true;
-      # codeium-nvim.enable = true;
+      codeium-nvim.enable = true;
       nvim-ufo = {
         enable = true;
         settings.provider_selector = ''
