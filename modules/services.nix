@@ -12,10 +12,19 @@
         )
       );
     };
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+          user = "greeter";
+        };
+      };
+    };
     displayManager = {
       defaultSession = "sway";
       autoLogin = {
-        enable = true;
+        enable = false;
         user = "cognusboi";
       };
     };
@@ -53,5 +62,6 @@
     };
     openssh.enable = true;
     blueman.enable = true;
+    syncthing.enable = true;
   };
 }

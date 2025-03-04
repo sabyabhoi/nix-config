@@ -22,16 +22,16 @@
         servers = {
           clangd.enable = true;
           gopls.enable = true;
-          elixirls.enable = true;
+          elixirls.enable = false;
           intelephense = {
-            enable = true;
+            enable = false;
             package = pkgs.intelephense;
           };
           ocamllsp = {
             enable = true;
             package = null;
           };
-          metals.enable = true; # for scala
+          metals.enable = false; # for scala
           rust_analyzer = {
             enable = true;
             autostart = true;
@@ -39,14 +39,29 @@
             installRustc = false;
             settings.cargo.features = "all";
           };
-          gleam.enable = true;
+          gleam.enable = false;
           pyright.enable = true;
           pest_ls = {
-            enable = true;
+            enable = false;
             autostart = true;
           };
           jsonls.enable = true;
           nixd.enable = true;
+
+          # Web development
+          eslint = {
+            enable = true;
+            settings.on_attach = ''
+              function(client, bufnr)
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                  buffer = bufnr,
+                  command = "EslintFixAll",
+                })
+              end
+            '';
+          };
+          ts_ls.enable = true;
+          tailwindcss.enable = true;
         };
         keymaps = {
           silent = true;
@@ -119,7 +134,7 @@
           };
 
           sources = [
-            {name = "codeium";}
+            {name = "copilot";}
             {name = "path";}
             {name = "nvim_lsp";}
             {name = "luasnip";}

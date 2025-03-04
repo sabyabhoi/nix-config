@@ -17,16 +17,13 @@
       feh
       ffmpeg
       firefox
-      flameshot
       font-awesome
       fzf
       gdb
       gimp
       gnome-font-viewer
       grim
-      godot_4
       guvcview
-      postman
       hyprshot
       imv
       lazygit
@@ -35,18 +32,18 @@
       nodePackages.nodejs
       obsidian
       pavucontrol
+      postman
       ripgrep
       ruff
-      sioyek
       slurp
       steam-run
       swayidle
       swww
       tealdeer
-      typst
       vesktop
       vlc
-      vscode
+      vscode-fhs
+      whatsapp-for-linux
       wine
       wl-clipboard
       zathura

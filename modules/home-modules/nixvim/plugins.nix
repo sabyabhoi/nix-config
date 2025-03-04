@@ -166,7 +166,15 @@
       };
       which-key.enable = true;
       render-markdown.enable = true;
-      codeium-nvim.enable = true;
+      # codeium-nvim.enable = true;
+      copilot-lua = {
+        enable = true;
+        settings = {
+          suggestion = {enabled = false;};
+          panel = {enabled = false;};
+        };
+      };
+      copilot-cmp.enable = true;
       nvim-ufo = {
         enable = true;
         settings.provider_selector = ''

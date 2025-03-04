@@ -14,10 +14,7 @@
 
     # Theme
     background-opacity = 1.0
-
-    cursor-style = bar
-    cursor-style-blink = true
-    adjust-cursor-thickness = 1
+    theme = catppuccin-macchiato
 
     resize-overlay = never
     copy-on-select = false

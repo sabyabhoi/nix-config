@@ -64,6 +64,13 @@
     _JAVA_OPTIONS = "-Djavafx.cachedir=${XDG_CACHE_HOME}/openjfx";
   };
 
+  nix.optimise.automatic = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   security.rtkit.enable = true;
   security.polkit.enable = true;
 
