@@ -48,6 +48,7 @@
   ];
 
   fonts.packages = with pkgs; [
+    poppins
     corefonts
     vistafonts
     noto-fonts

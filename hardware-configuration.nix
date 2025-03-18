@@ -13,9 +13,16 @@
   ];
 
   boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
+  boot.initrd.kernelModules = ["i915"];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/3014fcd6-34b5-4187-ae85-8361dd7030ae";

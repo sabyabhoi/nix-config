@@ -17,6 +17,7 @@
       feh
       ffmpeg
       firefox
+      code-cursor
       font-awesome
       fzf
       gdb
@@ -28,7 +29,6 @@
       imv
       lazygit
       libreoffice
-      lxappearance
       nodePackages.nodejs
       obsidian
       pavucontrol
