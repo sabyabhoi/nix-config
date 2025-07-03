@@ -27,6 +27,7 @@
       latitude = 17.38;
       longitude = 78.48;
     };
+    batsignal.enable = true;
   };
 
   home.file = {

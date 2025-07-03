@@ -23,10 +23,7 @@
           clangd.enable = true;
           gopls.enable = true;
           elixirls.enable = false;
-          intelephense = {
-            enable = false;
-            package = pkgs.intelephense;
-          };
+          phpactor.enable = true;
           ocamllsp = {
             enable = true;
             package = null;
@@ -134,7 +131,7 @@
           };
 
           sources = [
-            # {name = "copilot";}
+            {name = "copilot";}
             {name = "path";}
             {name = "nvim_lsp";}
             {name = "luasnip";}

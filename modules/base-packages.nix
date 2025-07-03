@@ -7,7 +7,7 @@
 
   programs = {
     sway = {
-      enable = true;
+      enable = false;
       package = pkgs.swayfx;
       wrapperFeatures.gtk = true;
     };
@@ -17,6 +17,7 @@
       defaultEditor = false;
     };
     steam.enable = true;
+    hyprland.enable = true;
   };
 
   # List packages installed in system profile. To search, run:
@@ -25,6 +26,7 @@
     arandr
     bat
     brightnessctl
+    busybox
     clang-tools
     gcc12
     git

@@ -11,13 +11,14 @@
       brave
       btop
       calibre
+      code-cursor
       ctags
       dconf
       fd
       feh
       ffmpeg
+      fh
       firefox
-      code-cursor
       font-awesome
       fzf
       gdb
@@ -26,16 +27,20 @@
       grim
       guvcview
       hyprshot
+      jetbrains.idea-community-bin
       imv
       lazygit
       libreoffice
       nodePackages.nodejs
+      ngrok
       obsidian
       pavucontrol
       postman
+      qpwgraph
       ripgrep
       ruff
       slurp
+      sqlitebrowser
       steam-run
       swayidle
       swww
@@ -55,6 +60,7 @@
       (import ../scripts/m720.nix {inherit pkgs;})
       (import ../scripts/m1080.nix {inherit pkgs;})
       (import ../scripts/rebuild.nix {inherit pkgs;})
+      (import ../scripts/update.nix {inherit pkgs;})
     ];
 
   programs = {

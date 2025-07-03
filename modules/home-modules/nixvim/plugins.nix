@@ -170,11 +170,11 @@
       copilot-lua = {
         enable = true;
         settings = {
-          suggestion = {enabled = true;};
-          panel = {enabled = true;};
+          # suggestion = {enabled = true;};
+          panel = {enabled = false;};
         };
       };
-      # copilot-cmp.enable = true;
+      copilot-cmp.enable = true;
       nvim-ufo = {
         enable = true;
         settings.provider_selector = ''

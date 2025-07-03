@@ -29,7 +29,7 @@
       foldenable = true;
     };
 
-    diagnostics = {
+    diagnostic.settings = {
       virtual_text = false;
       update_in_insert = true;
       signs = true;
