@@ -24,6 +24,7 @@
       libvdpau-va-gl
       vaapiIntel
       vdpauinfo
+      libva-utils
     ];
   };
 
