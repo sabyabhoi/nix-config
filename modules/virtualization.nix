@@ -11,7 +11,7 @@
         runAsRoot = true;
         swtpm.enable = true;
         ovmf = {
-          enable = true;
+          enable = false;
           packages = [
             (pkgs.OVMF.override {
               secureBoot = true;

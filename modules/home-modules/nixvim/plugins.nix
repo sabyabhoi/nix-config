@@ -184,6 +184,10 @@
         '';
       };
       emmet.enable = true;
+      harpoon = {
+        enable = true;
+        enableTelescope = true;
+      };
     };
     extraPlugins = [pkgs.vimPlugins.jellybeans-nvim];
     extraConfigLua = ''

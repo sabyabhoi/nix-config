@@ -31,7 +31,7 @@
       imv
       lazygit
       libreoffice
-      nodePackages.nodejs
+      # nodejs_24
       ngrok
       obsidian
       pavucontrol
