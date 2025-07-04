@@ -57,8 +57,8 @@
               end
             '';
           };
-          ts_ls.enable = true;
-          tailwindcss.enable = true;
+          ts_ls.enable = false;
+          tailwindcss.enable = false;
         };
         keymaps = {
           silent = true;

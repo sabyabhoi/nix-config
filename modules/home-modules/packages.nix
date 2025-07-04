@@ -8,6 +8,7 @@
   home.packages = with pkgs;
     [
       audacity
+      baobab
       brave
       btop
       calibre

@@ -106,7 +106,7 @@
         '';
       };
       competitest = {
-        enable = true;
+        enable = false;
         settings = {
           maximum_time = 2000;
           testcases_directory = "./testcases";
@@ -155,7 +155,7 @@
         };
       };
       vim-slime = {
-        enable = true;
+        enable = false;
         settings = {
           target = "zellij";
           default_config = {
@@ -189,14 +189,41 @@
         enableTelescope = true;
       };
     };
-    extraPlugins = [pkgs.vimPlugins.jellybeans-nvim];
+    # extraPlugins = [pkgs.vimPlugins.jellybeans-nvim];
     extraConfigLua = ''
       -- vim.cmd.colorscheme 'jellybeans-nvim'
       local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
-      for type, icon in pairs(signs) do
-        local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+
+      local mapped_signs = {}
+      for type_str, icon in pairs(signs) do
+        -- Assuming vim.diagnostic.severity is available (which it is)
+        local severity_constant = vim.diagnostic.severity[string.upper(type_str)]
+        if severity_constant then
+          mapped_signs[severity_constant] = icon
+        end
       end
+
+      vim.diagnostic.config({
+        signs = {
+          text = mapped_signs,
+          -- You can also set texthl and numhl here if you want them to be specific to the sign,
+          -- though usually you'd link them to the general DiagnosticSign* highlights.
+          -- For example, to explicitly link texthl and numhl for each sign type to its
+          -- corresponding highlight group (which is often the default behavior anyway):
+          numhl = {
+            [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+            [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+            [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+            [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+          },
+          texthl = {
+            [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+            [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+            [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+            [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+          },
+        },
+      })
     '';
   };
 }
