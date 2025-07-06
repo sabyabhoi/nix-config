@@ -23,7 +23,14 @@
           clangd.enable = true;
           gopls.enable = true;
           elixirls.enable = false;
-          phpactor.enable = true;
+          phpactor = {
+            enable = true;
+            settings = {
+              "diagnostic_ignore_codes" = [
+                "worse.docblock_missing_return_type"
+              ];
+            };
+          };
           ocamllsp = {
             enable = true;
             package = null;
