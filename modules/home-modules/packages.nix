@@ -32,7 +32,7 @@
       imv
       lazygit
       libreoffice
-      # nodejs_24
+      nodejs_24
       ngrok
       obsidian
       pavucontrol
@@ -97,7 +97,7 @@
     };
     waybar.enable = true;
     swaylock = {
-      enable = true;
+      enable = false;
       package = pkgs.swaylock-effects;
     };
     eza = {
