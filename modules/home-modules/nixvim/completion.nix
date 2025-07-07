@@ -67,7 +67,7 @@
               end
             '';
           };
-          ts_ls.enable = false;
+          ts_ls.enable = true;
           tailwindcss.enable = false;
         };
         keymaps = {
