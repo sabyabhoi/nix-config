@@ -5,11 +5,12 @@
 }: {
   imports = [
     ./modules/home-modules/nnn.nix
+    ./modules/home-modules/zellij.nix
     ./modules/home-modules/stylix.nix
     ./modules/home-modules/kitty.nix
-    ./modules/home-modules/lf.nix
+    # ./modules/home-modules/lf.nix
     ./modules/home-modules/dunst.nix
-    ./modules/home-modules/ghostty.nix
+    # ./modules/home-modules/ghostty.nix
     ./modules/home-modules/packages.nix
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/home-modules/nixvim

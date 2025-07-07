@@ -16,6 +16,9 @@
         ];
       };
 
+      lsp-format = {
+        enable = true;
+      };
       lsp = {
         enable = true;
         inlayHints = false;

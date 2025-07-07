@@ -2,12 +2,12 @@
   programs.nixvim = {
     plugins.none-ls = {
       enable = true;
-      # enableLspFormat = true;
+      enableLspFormat = true;
 
       sources.formatting = {
         prettierd = {
-          enable = true;
-          disableTsServerFormatter = true;
+          enable = false;
+          disableTsServerFormatter = false;
         };
       };
     };

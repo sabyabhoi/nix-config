@@ -91,16 +91,8 @@
       enableFishIntegration = true;
       nix-direnv.enable = true;
     };
-    zellij = {
-      enable = true;
-      enableFishIntegration = true;
-      settings = {
-        default_layout = "compact";
-        pane_frames = false;
-      };
-    };
     yazi = {
-      enable = true;
+      enable = false;
       enableFishIntegration = true;
     };
     waybar.enable = true;
