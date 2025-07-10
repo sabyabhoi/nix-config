@@ -24,8 +24,8 @@
           "H" = ":BufferLineCyclePrev<CR>";
           "L" = ":BufferLineCycleNext<CR>";
 
-          "<Leader>n" = ":NvimTreeToggle<CR>";
-          "<Leader>." = ":NvimTreeToggle<CR>";
+          "<Leader>n" = ":NvimTreeFindFileToggle<CR>";
+          "<Leader>." = ":NvimTreeFindFileToggle<CR>";
           "<Leader>/" = ":lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false, })<CR>";
           "<Leader>sf" = ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown { winblend = 10, previewer = false, })<CR>";
         };

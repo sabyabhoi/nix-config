@@ -18,6 +18,17 @@
 
       lsp-format = {
         enable = true;
+        settings = {
+          typescript = {
+            order = ["eslint"];
+          };
+          javascript = {
+            order = ["eslint"];
+          };
+          vue = {
+            order = ["eslint"];
+          };
+        };
       };
       lsp = {
         enable = true;
@@ -67,6 +78,7 @@
               end
             '';
           };
+          volar.enable = true; # For vue
           ts_ls.enable = true;
           tailwindcss.enable = false;
         };
