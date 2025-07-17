@@ -14,6 +14,8 @@
       name = "Bibata-Modern-Classic";
     };
 
+    homeManagerIntegration.autoImport = true;
+
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
