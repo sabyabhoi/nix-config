@@ -23,6 +23,7 @@
       font-awesome
       fzf
       gdb
+      gdu
       gimp
       gnome-font-viewer
       grim
@@ -52,6 +53,7 @@
       whatsapp-for-linux
       wine
       wl-clipboard
+      qbittorrent
       zathura
       zip
       zoom-us

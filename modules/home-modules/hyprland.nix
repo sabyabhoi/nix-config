@@ -277,6 +277,11 @@
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
       windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+
+
+      windowrulev2 = noinitialfocus,class:jetbrains-idea-ce,title:^win(.*)
+      windowrulev2 = nofocus,class:jetbrains-idea-ce,title:^win(.*)
+      windowrulev2 = nofollowmouse,class:jetbrains-idea-ce,title:^win(.*)
     '';
   };
 

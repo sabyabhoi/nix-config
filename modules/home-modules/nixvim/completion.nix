@@ -45,6 +45,7 @@
               ];
             };
           };
+          zls.enable = true;
           ocamllsp = {
             enable = true;
             package = null;
