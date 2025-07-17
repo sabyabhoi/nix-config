@@ -13,5 +13,27 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
     };
+
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+      serif = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+      sansSerif = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+
+      sizes = {
+        applications = 12;
+        terminal = 15;
+        desktop = 12;
+        popups = 12;
+      };
+    };
   };
 }

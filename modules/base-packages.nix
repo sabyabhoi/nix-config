@@ -18,6 +18,7 @@
     };
     steam.enable = true;
     hyprland.enable = true;
+    thunar.enable = true;
   };
 
   # List packages installed in system profile. To search, run:
@@ -46,7 +47,6 @@
     unzip
     usbutils
     xclip
-    xfce.thunar
   ];
 
   fonts.packages = with pkgs; [
