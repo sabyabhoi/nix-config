@@ -22,13 +22,7 @@
         };
       };
     };
-    # displayManager = {
-    #   defaultSession = "hyprland";
-    #   autoLogin = {
-    #     enable = true;
-    #     user = "cognusboi";
-    #   };
-    # };
+    n8n.enable = true;
     xserver = {
       enable = true;
       xkb = {

@@ -36,7 +36,7 @@
         servers = {
           clangd.enable = true;
           gopls.enable = true;
-          elixirls.enable = false;
+          elixirls.enable = true;
           phpactor = {
             enable = true;
             settings = {
