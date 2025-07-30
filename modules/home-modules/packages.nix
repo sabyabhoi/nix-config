@@ -7,12 +7,10 @@
 
   home.packages = with pkgs;
     [
-      audacity
-      baobab
+      # audacity
       brave
       btop
       calibre
-      code-cursor
       ctags
       dconf
       fd
@@ -29,7 +27,7 @@
       grim
       guvcview
       hyprshot
-      jetbrains.idea-community-bin
+      # jetbrains.idea-community-bin
       imv
       lazygit
       libreoffice
@@ -42,7 +40,6 @@
       ripgrep
       ruff
       slurp
-      sqlitebrowser
       steam-run
       swayidle
       swww
@@ -53,10 +50,8 @@
       whatsapp-for-linux
       wine
       wl-clipboard
-      qbittorrent
       zathura
       zip
-      zoom-us
     ]
     ++ [
       (import ../scripts/fonts.nix {inherit pkgs;})
