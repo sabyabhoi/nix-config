@@ -177,6 +177,20 @@
         '';
       };
       emmet.enable = true;
+      zellij-nav = {
+        enable = true;
+        luaConfig.post = ''
+          local map = vim.keymap.set
+          map("n", "<M-h>", "<cmd>ZellijNavigateLeftTab<cr>",
+              { desc = "navigate to left or tab" })
+          map("n", "<M-j>", "<cmd>ZellijNavigateDown<cr>",
+              { desc = "navigate down" })
+          map("n", "<M-k>", "<cmd>ZellijNavigateUp<cr>",
+              { desc = "navigate to up" })
+          map("n", "<M-l>", "<cmd>ZellijNavigateRightTab<cr>",
+              { desc = "navigate to right or tab" })
+        '';
+      };
       harpoon = {
         enable = true;
         settings.global_settings = {
