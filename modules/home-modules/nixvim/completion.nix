@@ -17,7 +17,7 @@
       };
 
       lsp-format = {
-        enable = true;
+        enable = false;
         settings = {
           typescript = {
             order = ["eslint"];
@@ -37,8 +37,12 @@
           clangd.enable = true;
           gopls.enable = true;
           elixirls.enable = true;
-          phpactor = {
+          intelephense = {
             enable = true;
+            package = null;
+          };
+          phpactor = {
+            enable = false;
             settings = {
               "diagnostic_ignore_codes" = [
                 "worse.docblock_missing_return_type"
@@ -79,7 +83,7 @@
               end
             '';
           };
-          volar.enable = true; # For vue
+          volar.enable = true;
           ts_ls.enable = true;
           tailwindcss.enable = false;
         };
@@ -107,10 +111,10 @@
       lspkind = {
         # vscode-like pictograms
         enable = true;
-        cmp = {
+        settings.cmp = {
           enable = true;
-          maxWidth = 50;
-          ellipsisChar = "...";
+          max_width = 50;
+          ellipsis_char = "...";
         };
       };
 

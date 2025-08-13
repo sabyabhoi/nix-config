@@ -46,14 +46,14 @@
       (normal
         ++ visual
         ++ [
-          {
-            action.__raw = "vim.lsp.buf.format";
-            key = "<Leader>f";
-            mode = "n";
-            options = {
-              silent = true;
-            };
-          }
+          # {
+          #   action.__raw = "vim.lsp.buf.format";
+          #   key = "<Leader>f";
+          #   mode = "n";
+          #   options = {
+          #     silent = true;
+          #   };
+          # }
         ]);
   };
 }

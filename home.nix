@@ -13,7 +13,7 @@
     ./modules/home-modules/dunst.nix
     # ./modules/home-modules/ghostty.nix
     ./modules/home-modules/packages.nix
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ./modules/home-modules/nixvim
   ];
   home.username = "cognusboi";
