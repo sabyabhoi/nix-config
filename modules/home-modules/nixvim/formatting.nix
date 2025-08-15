@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   jsLikeFormatter = {
     __unkeyed-1 = "prettierd";
     __unkeyed-2 = "prettier";
@@ -21,10 +20,11 @@ in {
       enable = true;
       settings = {
         formatters_by_ft = {
-          bash = [ "shellcheck" "shellharden" "shfmt" ];
-          cpp = [ "clang_format" ];
+          bash = ["shellcheck" "shellharden" "shfmt"];
+          cpp = ["clang_format"];
+          php = ["php-cs-fixer"];
+          elixir = ["mix_format"];
 
-          # Grouping JS-like languages
           javascript = jsLikeFormatter;
           javascriptreact = jsLikeFormatter;
           typescript = jsLikeFormatter;
