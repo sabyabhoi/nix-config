@@ -27,6 +27,8 @@
       foldlevel = 99;
       foldlevelstart = 99;
       foldenable = true;
+
+      laststatus = 3;
     };
 
     diagnostic.settings = {

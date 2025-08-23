@@ -5,6 +5,20 @@
 }: {
   programs.nixvim = {
     plugins = {
+      avante = {
+        enable = true;
+        settings = {
+          provider = "openrouter";
+          providers = {
+            openrouter = {
+              __inherited_from = "openai";
+              endpoint = "https://openrouter.ai/api/v1";
+              api_key_name = "OPENROUTER_API_KEY";
+              model = "qwen/qwen3-coder";
+            };
+          };
+        };
+      };
       lualine = {
         enable = true;
         settings.options = {
@@ -158,7 +172,12 @@
         };
       };
       which-key.enable = true;
-      render-markdown.enable = true;
+      render-markdown = {
+        enable = true;
+        settings.file_types = ["markdown" "Avante" "md"];
+      };
+      dressing.enable = true;
+      nui.enable = true;
       # codeium-nvim.enable = true;
       copilot-lua = {
         enable = true;

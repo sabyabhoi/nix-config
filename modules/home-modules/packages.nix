@@ -4,15 +4,19 @@
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.android_sdk.accept_license = true;
 
   home.packages = with pkgs;
     [
+      # android-studio
+      # android-tools
       # audacity
       brave
       btop
       calibre
       ctags
       dconf
+      devenv
       fd
       feh
       ffmpeg
@@ -27,13 +31,14 @@
       grim
       guvcview
       hyprshot
-      # jetbrains.idea-community-bin
       imv
+      # jetbrains.idea-community-bin
       lazygit
       libreoffice
-      nodejs_24
       ngrok
+      nodejs_24
       obsidian
+      opencode
       pavucontrol
       postman
       qpwgraph
