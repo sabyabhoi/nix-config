@@ -50,6 +50,7 @@
             };
           };
           zls.enable = true;
+          jdtls.enable = true;
           ocamllsp = {
             enable = true;
             package = null;

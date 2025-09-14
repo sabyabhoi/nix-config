@@ -16,6 +16,22 @@
       enable = false;
       defaultEditor = false;
     };
+    git = {
+      enable = true;
+      config = {
+        user = {
+          name = "Sabyasachi Bhoi";
+          email = "sabyabhoi@gmail.com";
+        };
+        core.pager = "delta";
+        interactive.diffFilter = "delta --color-only";
+        delta = {
+          navigate = true;
+          dark = true;
+        };
+        merge.conflictstyle = "zdiff3";
+      };
+    };
     steam.enable = true;
     hyprland.enable = true;
     thunar.enable = true;
@@ -29,7 +45,7 @@
     brightnessctl
     busybox
     clang-tools
-    gcc12
+    gcc13
     git
     home-manager
     iproute2

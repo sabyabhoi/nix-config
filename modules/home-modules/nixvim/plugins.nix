@@ -19,6 +19,24 @@
           };
         };
       };
+      competitest = {
+        enable = true;
+        settings = {
+          maximum_time = 2000;
+          testcases_directory = "./testcases";
+        };
+        luaConfig.post = ''
+          local map = vim.keymap.set
+          map("n", "<leader>cr", "<cmd>CompetiTest run<cr>",
+              { desc = "Run CompetiTest" })
+          map("n", "<leader>ce", "<cmd>CompetiTest edit_testcase<cr>",
+              { desc = "Edit testcase" })
+          map("n", "<leader>ca", "<cmd>CompetiTest add_testcase<cr>",
+              { desc = "Add new testcase" })
+          map("n", "<leader>cd", "<cmd>CompetiTest delete_testcase<cr>",
+              { desc = "Deletetestcase" })
+        '';
+      };
       lualine = {
         enable = true;
         settings.options = {

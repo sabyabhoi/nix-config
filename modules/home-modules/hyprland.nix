@@ -77,7 +77,7 @@
           # col.inactive_border = rgba(595959aa)
 
           # Set to true enable resizing windows by clicking and dragging on borders and gaps
-          resize_on_border = false
+          resize_on_border = true
 
           # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
           allow_tearing = false
@@ -193,7 +193,7 @@
       bind = SUPER_SHIFT, Q, killactive,
       bind = $mainMod, f, fullscreen,
       bind = SUPER_SHIFT, E, exit,
-      bind = $mainMod, E, exec, $fileManager
+      bind = $mainMod, E, exec,emacsclient -c
       bind = $mainMod, v, togglefloating,
       bind = $mainMod, space, exec,rofi -show drun
       bind = $mainMod, p, pseudo, # dwindle

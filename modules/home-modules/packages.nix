@@ -8,14 +8,13 @@
 
   home.packages = with pkgs;
     [
-      # android-studio
-      # android-tools
-      # audacity
       brave
+      protonvpn-gui
       btop
       calibre
       ctags
       dconf
+      delta
       devenv
       fd
       feh
@@ -29,10 +28,12 @@
       gimp
       gnome-font-viewer
       grim
+      guitarix
       guvcview
       hyprshot
       imv
       # jetbrains.idea-community-bin
+      jq
       lazygit
       libreoffice
       ngrok
@@ -70,11 +71,6 @@
     java = {
       enable = true;
       # package = pkgs.oraclejdk8;
-    };
-    git = {
-      enable = true;
-      userName = "sabyabhoi";
-      userEmail = "sabyabhoi@gmail.com";
     };
     zoxide = {
       enable = true;

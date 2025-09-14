@@ -24,6 +24,10 @@ in {
           cpp = ["clang_format"];
           php = ["php-cs-fixer"];
           elixir = ["mix_format"];
+          rust = ["rustfmt"];
+          ocaml = ["ocamlformat"];
+          java = ["google_java_format"];
+          go = ["gofmt"];
 
           javascript = jsLikeFormatter;
           javascriptreact = jsLikeFormatter;
