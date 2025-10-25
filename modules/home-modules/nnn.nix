@@ -8,7 +8,6 @@
     package = pkgs.nnn.override {withNerdIcons = true;};
     extraPackages = with pkgs; [
       tabbed
-      catimg
       ffmpegthumbnailer
       mediainfo
       sxiv

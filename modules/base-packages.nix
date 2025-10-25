@@ -66,6 +66,7 @@
   ];
 
   fonts.packages = with pkgs; [
+    crimson-pro
     poppins
     corefonts
     vistafonts

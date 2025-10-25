@@ -84,7 +84,6 @@
               end
             '';
           };
-          volar.enable = true;
           ts_ls.enable = true;
           tailwindcss.enable = false;
         };

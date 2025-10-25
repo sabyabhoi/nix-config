@@ -11,7 +11,8 @@
       brave
       protonvpn-gui
       btop
-      calibre
+      # calibre
+      httpie-desktop
       ctags
       dconf
       delta
@@ -78,7 +79,7 @@
     };
     rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
+      # package = pkgs.rofi-wayland;
       extraConfig = {
         display-drun = "Applications: ";
         modi = "window,run,drun";
