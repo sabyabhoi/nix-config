@@ -30,8 +30,7 @@
         options = "caps:swapescape";
       };
     };
-    auto-cpufreq.enable = false;
-    # gamemode.enable = true;
+    auto-cpufreq.enable = true;
     gvfs.enable = true;
     udisks2.enable = true;
     pipewire = {

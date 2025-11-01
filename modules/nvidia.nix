@@ -4,28 +4,18 @@
   pkgs,
   ...
 }: {
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      libvdpau-va-gl
+      vaapiIntel
+      vdpauinfo
+      libva-utils
+    ];
   };
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    nvidiaPersistenced = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
-
-    nvidiaSettings = true;
-
-    #open = true;
-
-    prime = {
-      offload.enable = true;
-
-      amdgpuBusId = "PCI:5:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
-  services.xserver.videoDrivers = ["nvidia"];
+  # Intel integrated graphics
+  services.xserver.videoDrivers = ["modesetting"];
 }

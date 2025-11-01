@@ -100,7 +100,7 @@
 
           # https://wiki.hyprland.org/Configuring/Variables/#blur
           blur {
-              enabled = true
+              enabled = false
               size = 3
               passes = 1
 
@@ -194,10 +194,10 @@
       bind = $mainMod, f, fullscreen,
       bind = SUPER_SHIFT, E, exit,
       bind = $mainMod, E, exec,emacsclient -c
-      bind = $mainMod, v, togglefloating,
+      # bind = $mainMod, v, togglefloating,
       bind = $mainMod, space, exec,rofi -show drun
       bind = $mainMod, p, pseudo, # dwindle
-      bind = $mainMod, t, togglesplit, # dwindle
+      bind = $mainMod, v, togglesplit, # dwindle
 
       bind = $mainMod, h, movefocus, l
       bind = $mainMod, l, movefocus, r

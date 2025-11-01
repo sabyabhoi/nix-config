@@ -11,7 +11,6 @@
       brave
       protonvpn-gui
       btop
-      # calibre
       httpie-desktop
       ctags
       dconf
@@ -21,7 +20,6 @@
       feh
       ffmpeg
       fh
-      firefox
       font-awesome
       fzf
       gdb
@@ -39,6 +37,7 @@
       libreoffice
       ngrok
       nodejs_24
+      pnpm
       obsidian
       opencode
       pavucontrol
@@ -51,6 +50,7 @@
       swayidle
       swww
       tealdeer
+      tmux
       vesktop
       vlc
       vscode-fhs
@@ -76,6 +76,12 @@
     zoxide = {
       enable = true;
       enableFishIntegration = true;
+    };
+    firefox = {
+      enable = true;
+      profiles = {
+        my-profile = {};
+      };
     };
     rofi = {
       enable = true;
