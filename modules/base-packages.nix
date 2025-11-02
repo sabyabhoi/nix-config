@@ -69,7 +69,7 @@
     crimson-pro
     poppins
     corefonts
-    vistafonts
+    vista-fonts
     noto-fonts
     roboto
     nerd-fonts.iosevka

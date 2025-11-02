@@ -54,7 +54,6 @@
       vesktop
       vlc
       vscode-fhs
-      whatsapp-for-linux
       wine
       wl-clipboard
       zathura

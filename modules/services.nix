@@ -5,9 +5,9 @@
 }: {
   services = {
     emacs = {
-      enable = true;
+      enable = false;
       package = with pkgs; (
-        (emacsPackagesFor emacsNativeComp).emacsWithPackages (
+        (emacsPackagesFor emacs).emacsWithPackages (
           epkgs: [epkgs.vterm]
         )
       );
