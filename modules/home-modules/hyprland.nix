@@ -148,10 +148,10 @@
 
       # https://wiki.hyprland.org/Configuring/Variables/#input
       input {
-          kb_layout = us
-          kb_variant =
+          kb_layout = us,us
+          kb_variant = ,colemak
           kb_model =
-          kb_options = caps:swapescape,ctrl:swap_lalt_lctl
+          kb_options = caps:escape,ctrl:swap_lalt_lctl,grp:alt_space_toggle
           kb_rules =
 
           repeat_delay = 200
@@ -189,6 +189,7 @@
       $mainMod = SUPER # Sets "Windows" key as main modifier
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+      bind = SUPER_SHIFT, space, exec, hyprctl switchxkblayout sino-wealth-gaming-kb--keyboard next
       bind = $mainMod, Return, exec, $terminal
       bind = SUPER_SHIFT, Q, killactive,
       bind = $mainMod, f, fullscreen,
