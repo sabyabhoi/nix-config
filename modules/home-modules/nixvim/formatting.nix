@@ -21,6 +21,7 @@ in {
       settings = {
         formatters_by_ft = {
           bash = ["shellcheck" "shellharden" "shfmt"];
+          c = ["clang_format"];
           cpp = ["clang_format"];
           php = ["php-cs-fixer"];
           elixir = ["mix_format"];

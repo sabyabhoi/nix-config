@@ -9,10 +9,11 @@
   home.packages = with pkgs;
     [
       brave
-      protonvpn-gui
+      # protonvpn-gui
       btop
       httpie-desktop
       ctags
+      calibre
       dconf
       delta
       devenv
@@ -28,10 +29,10 @@
       gnome-font-viewer
       grim
       guitarix
-      guvcview
+      # guvcview
       hyprshot
       imv
-      # jetbrains.idea-community-bin
+      jetbrains.idea-community-bin
       jq
       lazygit
       libreoffice

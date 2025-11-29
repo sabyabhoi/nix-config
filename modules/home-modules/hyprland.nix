@@ -68,7 +68,7 @@
       # https://wiki.hyprland.org/Configuring/Variables/#general
       general {
           gaps_in = 5
-          gaps_out = 20
+          gaps_out = 15
 
           border_size = 1
 
@@ -215,6 +215,9 @@
       bind = $mainMod SHIFT, down, movewindow, d
 
       bind = $mainMod SHIFT, x, exec, hyprlock
+
+      # bind = , code:66, exec, hyprctl dispatch sendkeystate , Escape, down, activewindow
+      # bind = , code:66, exec, hyprctl dispatch sendkeystate , Escape, up, activewindow
 
       bind = $mainMod CTRL, l, movecurrentworkspacetomonitor, r
       bind = $mainMod CTRL, h, movecurrentworkspacetomonitor, l
