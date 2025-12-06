@@ -46,7 +46,7 @@
       # exec-once = nm-applet &
       exec-once = /home/cognusboi/.config/waybar/waybar.sh
       exec-once = swww-daemon --format xrgb
-      exec-once = /home/cognusboi/programming/python/wallquote/wallpaper-change.sh &
+      # exec-once = /home/cognusboi/programming/python/wallquote/wallpaper-change.sh &
 
 
       #############################
@@ -219,6 +219,7 @@
       # bind = , code:66, exec, hyprctl dispatch sendkeystate , Escape, down, activewindow
       # bind = , code:66, exec, hyprctl dispatch sendkeystate , Escape, up, activewindow
 
+      bind = CTRL, space, exec, dunstctl close
       bind = $mainMod CTRL, l, movecurrentworkspacetomonitor, r
       bind = $mainMod CTRL, h, movecurrentworkspacetomonitor, l
 

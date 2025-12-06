@@ -22,7 +22,7 @@
         };
       };
     };
-    n8n.enable = true;
+    n8n.enable = false;
     xserver = {
       enable = true;
       xkb = {
@@ -41,6 +41,6 @@
     };
     openssh.enable = true;
     blueman.enable = true;
-    syncthing.enable = true;
+    syncthing.enable = false;
   };
 }
