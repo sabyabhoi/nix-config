@@ -32,7 +32,7 @@
       # guvcview
       hyprshot
       imv
-      jetbrains.idea-community-bin
+      # jetbrains.idea-community-bin
       jq
       lazygit
       libreoffice
@@ -65,6 +65,7 @@
       (import ../scripts/m720.nix {inherit pkgs;})
       (import ../scripts/m1080.nix {inherit pkgs;})
       (import ../scripts/rebuild.nix {inherit pkgs;})
+      (import ../scripts/clean.nix {inherit pkgs;})
       (import ../scripts/update.nix {inherit pkgs;})
     ];
 
