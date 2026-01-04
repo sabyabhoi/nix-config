@@ -12,7 +12,7 @@
     };
 
     stevenblack = {
-      enable = true;
+      enable = false;
       block = ["porn"];
     };
 

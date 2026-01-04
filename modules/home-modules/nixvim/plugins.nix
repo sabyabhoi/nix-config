@@ -65,17 +65,12 @@
           padding = true;
           sticky = true;
           toggler = {
-            line = "<C-m>";
+            line = "<C-/>";
             block = "gbc";
           };
           opleader = {
-            line = "<C-m>";
+            line = "<C-/>";
             block = "gb";
-          };
-          extra = {
-            above = "gcO";
-            below = "gco";
-            eol = "gcA";
           };
         };
       };

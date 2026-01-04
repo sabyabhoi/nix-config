@@ -9,7 +9,7 @@
   home.packages = with pkgs;
     [
       brave
-      # protonvpn-gui
+      protonvpn-gui
       btop
       httpie-desktop
       ctags
