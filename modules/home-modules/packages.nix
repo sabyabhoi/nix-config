@@ -9,11 +9,9 @@
   home.packages = with pkgs;
     [
       brave
-      protonvpn-gui
       btop
-      httpie-desktop
-      ctags
       calibre
+      ctags
       dconf
       delta
       devenv
@@ -30,6 +28,7 @@
       grim
       guitarix
       # guvcview
+      httpie-desktop
       hyprshot
       imv
       jetbrains.idea-community-bin
@@ -38,15 +37,17 @@
       libreoffice
       ngrok
       nodejs_24
-      pnpm
       obsidian
       opencode
       pavucontrol
+      pnpm
       postman
+      protonvpn-gui
       qpwgraph
       ripgrep
       ruff
       slurp
+      spotify
       steam-run
       swayidle
       swww
