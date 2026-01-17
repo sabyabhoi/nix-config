@@ -18,8 +18,8 @@
       ################
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
-      monitor=eDP-1,1920x1200 @60,2560x0,1
-      monitor=HDMI-A-1,2560x1440 @144,0x0,1
+      monitor=DP-2,2560x1440 @144,0x0,1
+      monitor=HDMI-A-1,1920x1080 @60,2560x0,1
       monitor=,preferred,auto,auto
 
       render {
@@ -48,9 +48,9 @@
 
       # exec-once = $terminal
       # exec-once = nm-applet &
-      exec-once = /home/cognusboi/.config/waybar/waybar.sh
+      exec-once = waybar
       exec-once = swww-daemon --format xrgb
-      # exec-once = /home/cognusboi/programming/python/wallquote/wallpaper-change.sh &
+      # exec-once = /home/sabyabhoi/programming/python/wallquote/wallpaper-change.sh &
 
 
       #############################

@@ -20,7 +20,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
-      cognusboi = import ./home.nix;
+      sabyabhoi = import ./home.nix;
     };
   };
 
@@ -39,7 +39,7 @@
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
-      trusted-users = ["root" "cognusboi"];
+      trusted-users = ["root" "sabyabhoi"];
       builders-use-substitutes = true;
       auto-optimise-store = true;
     };
@@ -50,7 +50,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.cognusboi = {
+  users.users.sabyabhoi = {
     isNormalUser = true;
     description = "Sabyasachi Bhoi";
     extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render" "docker" "libvirtd" "kvm"];

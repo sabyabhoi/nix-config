@@ -32,7 +32,7 @@
         merge.conflictstyle = "zdiff3";
       };
     };
-    steam.enable = false;
+    steam.enable = true;
     hyprland.enable = true;
     thunar.enable = true;
   };

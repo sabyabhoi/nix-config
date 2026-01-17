@@ -16,8 +16,8 @@
     inputs.nixvim.homeModules.nixvim
     ./modules/home-modules/nixvim
   ];
-  home.username = "cognusboi";
-  home.homeDirectory = "/home/cognusboi";
+  home.username = "sabyabhoi";
+  home.homeDirectory = "/home/sabyabhoi";
 
   home.stateVersion = "23.11";
 

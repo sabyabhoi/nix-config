@@ -31,7 +31,7 @@
       "wallpaper-change" = {
         serviceConfig = {
           Type = "oneshot";
-          User = "cognusboi";
+          User = "sabyabhoi";
         };
         path = [
           # pkgs.swww
@@ -39,14 +39,14 @@
         script = let
           python = pkgs.python3.withPackages (ps: with ps; [pillow]);
         in ''
-          cd /home/cognusboi/programming/python/wallquote/
+          cd /home/sabyabhoi/programming/python/wallquote/
           ${python}/bin/python app.py
         '';
       };
       "hydrate" = {
         serviceConfig = {
           Type = "oneshot";
-          User = "cognusboi";
+          User = "sabyabhoi";
           Environment = "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus";
         };
         path = [];

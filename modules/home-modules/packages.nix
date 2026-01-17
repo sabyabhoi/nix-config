@@ -31,7 +31,7 @@
       httpie-desktop
       hyprshot
       imv
-      jetbrains.idea-community-bin
+      # jetbrains.idea-community-bin
       jq
       lazygit
       libreoffice
@@ -48,18 +48,19 @@
       ruff
       slurp
       spotify
-      steam-run
       swayidle
       swww
       tealdeer
       tmux
       vesktop
+      sd
       vlc
       vscode-fhs
       wine
       wl-clipboard
       zathura
       zip
+      zed-editor
     ]
     ++ [
       (import ../scripts/fonts.nix {inherit pkgs;})

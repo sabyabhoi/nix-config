@@ -13,11 +13,12 @@
       );
     };
     tlp.enable = false;
+    fstrim.enable = true;
     greetd = {
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
           user = "greeter";
         };
       };
@@ -30,7 +31,7 @@
         options = "caps:swapescape";
       };
     };
-    auto-cpufreq.enable = true;
+    auto-cpufreq.enable = false;
     gvfs.enable = true;
     udisks2.enable = true;
     pipewire = {
