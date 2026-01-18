@@ -63,7 +63,7 @@
             installRustc = false;
             settings.cargo.features = "all";
           };
-          gleam.enable = false;
+          gleam.enable = true;
           pyright.enable = true;
           pest_ls = {
             enable = false;

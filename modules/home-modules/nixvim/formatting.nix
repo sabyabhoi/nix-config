@@ -29,6 +29,7 @@ in {
           ocaml = ["ocamlformat"];
           java = ["google_java_format"];
           go = ["gofmt"];
+          gleam = ["gleamfmt"];
 
           javascript = jsLikeFormatter;
           javascriptreact = jsLikeFormatter;
