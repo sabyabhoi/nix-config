@@ -42,6 +42,8 @@
   environment.systemPackages = with pkgs; [
     arandr
     bat
+    bluez
+    bluez-tools
     brightnessctl
     busybox
     clang-tools
