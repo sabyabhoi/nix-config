@@ -45,6 +45,11 @@
     };
   };
 
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50; # Use 50% of RAM as compressed swap
+  };
+
   fileSystems."/tmp" = {
     fsType = "tmpfs";
   };

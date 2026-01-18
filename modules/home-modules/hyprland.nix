@@ -25,6 +25,8 @@
       render {
         cm_fs_passthrough = 0
         cm_auto_hdr = 0
+
+        direct_scanout = 2 # Better performance for fullscreen games
       }
 
       ###################
