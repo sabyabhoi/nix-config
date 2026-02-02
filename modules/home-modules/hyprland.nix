@@ -201,7 +201,7 @@
       bind = $mainMod, f, fullscreen,
       bind = SUPER_SHIFT, E, exit,
       bind = $mainMod, E, exec,emacsclient -c
-      # bind = $mainMod, v, togglefloating,
+      bind = $mainMod, t, togglefloating,
       bind = $mainMod, space, exec,rofi -show drun
       bind = $mainMod, p, pseudo, # dwindle
       bind = $mainMod, v, togglesplit, # dwindle
@@ -272,7 +272,8 @@
       binde =, XF86MonBrightnessDown, exec, brightnessctl s 10%-
       binde =, XF86MonBrightnessUp, exec, brightnessctl s +10%
 
-      binde =, Print, exec, hyprshot -m region
+      binde = $mainMod, Print, exec, hyprshot -m region
+      binde = , Print, exec, hyprshot -m active -m window
 
       ##############################
       ### WINDOWS AND WORKSPACES ###
@@ -287,12 +288,20 @@
       # Example windowrule v2
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
-      windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+      windowrule {
+        name = windowrule-1
+        suppress_event = maximize
+        match:class = .* # You'll probably like this.
+      }
 
-
-      windowrulev2 = noinitialfocus,class:jetbrains-idea-ce,title:^win(.*)
-      windowrulev2 = nofocus,class:jetbrains-idea-ce,title:^win(.*)
-      windowrulev2 = nofollowmouse,class:jetbrains-idea-ce,title:^win(.*)
+      windowrule {
+        name = windowrule-2
+        no_initial_focus = on
+        no_focus = on
+        no_follow_mouse = on
+        match:class = jetbrains-idea-ce
+        match:title = ^win(.*)
+      }
     '';
   };
 

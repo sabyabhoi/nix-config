@@ -146,7 +146,8 @@
         keymaps = {
           "<leader>sg" = "live_grep";
           "<leader>b" = "buffers";
-          "<leader>d" = "lsp_document_symbols";
+          "grd" = "lsp_document_symbols";
+          "grr" = "lsp_references";
         };
         extensions = {
           ui-select.enable = true;

@@ -32,7 +32,7 @@
         merge.conflictstyle = "zdiff3";
       };
     };
-    steam.enable = false;
+    steam.enable = true;
     hyprland.enable = true;
     thunar.enable = true;
   };
@@ -45,7 +45,9 @@
     bluez
     bluez-tools
     brightnessctl
-    busybox
+    # busybox
+    coreutils-full
+    wget
     clang-tools
     gcc13
     git

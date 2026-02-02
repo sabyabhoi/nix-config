@@ -42,25 +42,28 @@
       pavucontrol
       pnpm
       postman
+      prismlauncher
       protonvpn-gui
       qpwgraph
       ripgrep
       ruff
+      sd
       slurp
       spotify
       swayidle
       swww
       tealdeer
       tmux
+      veloren
       vesktop
-      sd
       vlc
       vscode-fhs
+      vulkan-tools
       wine
       wl-clipboard
       zathura
-      zip
       zed-editor
+      zip
     ]
     ++ [
       (import ../scripts/fonts.nix {inherit pkgs;})
