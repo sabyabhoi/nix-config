@@ -40,15 +40,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    android-tools
     arandr
     bat
     bluez
     bluez-tools
     brightnessctl
     # busybox
-    coreutils-full
-    wget
     clang-tools
+    coreutils-full
     gcc13
     git
     home-manager
@@ -66,6 +66,7 @@
     unrar
     unzip
     usbutils
+    wget
     xclip
   ];
 
