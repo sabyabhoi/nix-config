@@ -4,6 +4,7 @@
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.android_sdk.accept_license = true;
 
   programs = {
     sway = {
@@ -32,7 +33,10 @@
         merge.conflictstyle = "zdiff3";
       };
     };
-    steam.enable = true;
+    steam = {
+      enable = true;
+      protontricks.enable = true;
+    };
     hyprland.enable = true;
     thunar.enable = true;
   };
@@ -40,7 +44,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    android-tools
+    # android-tools
+    # androidenv.androidPkgs.androidsdk
     arandr
     bat
     bluez
@@ -58,7 +63,7 @@
     libnotify
     man-pages
     mpv
-    nnn
+    # nnn
     pamixer
     python3
     python311Packages.ptpython
@@ -68,6 +73,12 @@
     usbutils
     wget
     xclip
+    # (pkgs.androidenv.emulateApp {
+    #   name = "emulate-MyAndroidApp";
+    #   platformVersion = "36";
+    #   abiVersion = "x86_64"; # armeabi-v7a, mips, x86_64
+    #   systemImageType = "google_apis_playstore";
+    # })
   ];
 
   fonts.packages = with pkgs; [

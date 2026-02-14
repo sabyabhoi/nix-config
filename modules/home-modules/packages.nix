@@ -4,10 +4,11 @@
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.android_sdk.accept_license = true;
+  # nixpkgs.config.android_sdk.accept_license = true;
 
   home.packages = with pkgs;
     [
+      # androidenv.androidPkgs.androidsdk
       brave
       btop
       calibre
@@ -62,7 +63,7 @@
       wine
       wl-clipboard
       zathura
-      zed-editor
+      # zed-editor
       zip
     ]
     ++ [
