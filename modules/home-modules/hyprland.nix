@@ -37,9 +37,6 @@
 
       # Set programs that you use
       $terminal = kitty
-      $fileManager = thunar
-      $menu = rofi -show drun
-
 
       #################
       ### AUTOSTART ###
@@ -52,7 +49,6 @@
       # exec-once = nm-applet &
       exec-once = waybar
       exec-once = swww-daemon --format xrgb
-      # exec-once = /home/sabyabhoi/programming/python/wallquote/wallpaper-change.sh &
 
 
       #############################
@@ -202,7 +198,7 @@
       bind = SUPER_SHIFT, E, exit,
       bind = $mainMod, E, exec,emacsclient -c
       bind = $mainMod, t, togglefloating,
-      bind = $mainMod, space, exec,rofi -show drun
+      bind = $mainMod, space, exec,vicinae open
       bind = $mainMod, p, pseudo, # dwindle
       bind = $mainMod, v, togglesplit, # dwindle
 
@@ -220,7 +216,7 @@
       bind = $mainMod SHIFT, up, movewindow, u
       bind = $mainMod SHIFT, down, movewindow, d
 
-      bind = $mainMod SHIFT, x, exec, hyprlock
+      bind = $mainMod SHIFT, x, exec, systemctl suspend
 
       # bind = , code:66, exec, hyprctl dispatch sendkeystate , Escape, down, activewindow
       # bind = , code:66, exec, hyprctl dispatch sendkeystate , Escape, up, activewindow

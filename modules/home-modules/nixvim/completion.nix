@@ -16,20 +16,6 @@
         ];
       };
 
-      lsp-format = {
-        enable = false;
-        settings = {
-          typescript = {
-            order = ["eslint"];
-          };
-          javascript = {
-            order = ["eslint"];
-          };
-          vue = {
-            order = ["eslint"];
-          };
-        };
-      };
       lsp = {
         enable = true;
         inlayHints = false;

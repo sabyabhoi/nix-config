@@ -73,6 +73,7 @@
     usbutils
     wget
     xclip
+    xwayland-satellite
     # (pkgs.androidenv.emulateApp {
     #   name = "emulate-MyAndroidApp";
     #   platformVersion = "36";
