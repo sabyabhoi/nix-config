@@ -8,6 +8,7 @@
   home.packages = with pkgs;
     [
       niri
+      noctalia-shell
       ardour
       # brave
       btop
