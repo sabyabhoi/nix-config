@@ -123,6 +123,10 @@
 
           # fast workspace switch
           animation = workspaces, 1, 3, fast, slide
+
+          animation = fade, 1, 2, fast
+          animation = fadeIn, 1, 2, fast
+          animation = fadeOut, 1, 2, fast
       }
 
         # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
