@@ -35,6 +35,20 @@
               { desc = "Add new testcase" })
           map("n", "<leader>cd", "<cmd>CompetiTest delete_testcase<cr>",
               { desc = "Deletetestcase" })
+          require('competitest').setup {
+            editor_ui = {
+              normal_mode_mappings = {
+                switch_window = { "<C-h>", "<C-l>", "<C-i>" },
+                save_and_close = "<C-s>",
+                cancel = { "q", "Q" },
+              },
+              insert_mode_mappings = {
+                switch_window = { "<C-h>", "<C-l>", "<C-i>" },
+                save_and_close = "<C-s>",
+                cancel = "<C-q>",
+              },
+            }
+          }
         '';
       };
       lualine = {
