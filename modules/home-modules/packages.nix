@@ -12,11 +12,12 @@
       ardour
       # brave
       btop
-      calibre
+      # calibre
       ctags
       dconf
       delta
       fd
+      qbittorrent
       feh
       ffmpeg
       fh
@@ -27,7 +28,7 @@
       gimp
       gnome-font-viewer
       grim
-      guitarix
+      # guitarix
       # guvcview
       httpie-desktop
       hyprshot
@@ -35,7 +36,7 @@
       # jetbrains.idea-community-bin
       jq
       lazygit
-      libreoffice
+      # libreoffice
       ngrok
       nodejs_24
       obsidian
@@ -72,6 +73,9 @@
     ];
 
   programs = {
+    codex = {
+      enable = true;
+    };
     brave = {
       enable = true;
       commandLineArgs = [
