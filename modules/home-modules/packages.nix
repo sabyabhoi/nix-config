@@ -7,6 +7,7 @@
 
   home.packages = with pkgs;
     [
+      lutris
       niri
       noctalia-shell
       ardour
