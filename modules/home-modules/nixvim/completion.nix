@@ -36,7 +36,7 @@
             };
           };
           zls.enable = true;
-          jdtls.enable = true;
+          jdtls.enable = false;
           ocamllsp = {
             enable = true;
             package = null;
@@ -84,7 +84,7 @@
 
           lspBuf = {
             ga = "code_action";
-            gd = "definition";
+            # gd = "definition";
             gD = "references";
             gt = "type_definition";
             gi = "implementation";

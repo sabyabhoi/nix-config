@@ -281,11 +281,12 @@
       "segment_tree"
     ],
     "body": [
-      "template <typename T, T (*combine)(T, T), T identity>",
+      "template <typename T, T (*combine)(T, T)>",
       "class SegTree {",
       " public:",
-      "  SegTree(const vector<T>& v) {",
+      "  SegTree(const vector<T>& v, T identity) {",
       "    n = sz(v);",
+      "    this->identity = identity;",
       "    nodes = vector<T>(4 * n);",
       "    build(v, 0, 0, n - 1);",
       "  }",
@@ -297,6 +298,7 @@
       " private:",
       "  vector<T> nodes;",
       "  int n;",
+      "  T identity;",
       "",
       "  T build(const vector<T>& v, int i, int l, int r) {",
       "    if (l == r) return nodes[i] = v[l];",

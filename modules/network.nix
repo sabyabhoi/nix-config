@@ -12,8 +12,8 @@
     };
 
     stevenblack = {
-      enable = false;
-      block = ["porn"];
+      enable = true;
+      block = ["porn" "fakenews"];
     };
 
     nameservers = [

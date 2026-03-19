@@ -161,6 +161,7 @@
           "<leader>sg" = "live_grep";
           "<leader>b" = "buffers";
           "grd" = "lsp_document_symbols";
+          "gd" = "lsp_definitions";
           "grr" = "lsp_references";
         };
         extensions = {
