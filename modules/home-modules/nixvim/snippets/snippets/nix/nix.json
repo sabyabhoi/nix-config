@@ -21,7 +21,7 @@
       "          ]; ",
       "        };",
       "       shellhook = ''",
-      "         source ./venv/bin/activate",
+      "         source ./venv/bin/active.fish",
       "       '';",
       "   };",
       "}"

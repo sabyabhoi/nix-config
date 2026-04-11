@@ -13,7 +13,6 @@
     ./modules/home-modules/dunst.nix
     ./modules/home-modules/ghostty.nix
     ./modules/home-modules/packages.nix
-    ./modules/home-modules/zsh.nix
     inputs.nixvim.homeModules.nixvim
     ./modules/home-modules/nixvim
   ];

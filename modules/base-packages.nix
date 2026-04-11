@@ -12,7 +12,7 @@
       package = pkgs.swayfx;
       wrapperFeatures.gtk = true;
     };
-    zsh.enable = true;
+    fish.enable = true;
     neovim = {
       enable = false;
       defaultEditor = false;
@@ -31,18 +31,6 @@
           dark = true;
         };
         merge.conflictstyle = "zdiff3";
-        alias = {
-          st = "status -sb";
-          co = "checkout";
-          br = "branch";
-          ci = "commit";
-          df = "diff";
-          ds = "diff --staged";
-          lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
-          last = "log -1 HEAD";
-          unstage = "reset HEAD --";
-          amend = "commit --amend --no-edit";
-        };
       };
     };
     steam = {
