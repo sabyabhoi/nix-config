@@ -23,7 +23,6 @@
       ffmpeg
       fh
       font-awesome
-      fzf
       gdb
       gdu
       gimp
@@ -108,7 +107,7 @@
     };
     zoxide = {
       enable = true;
-      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
     firefox = {
       enable = true;
@@ -118,7 +117,7 @@
     };
     direnv = {
       enable = true;
-      enableFishIntegration = true;
+      enableZshIntegration = true;
       nix-direnv.enable = true;
     };
     waybar.enable = true;

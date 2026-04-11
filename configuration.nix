@@ -60,7 +60,7 @@
     description = "Sabyasachi Bhoi";
     extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render" "docker" "libvirtd" "kvm" "adbusers"];
     packages = [];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
 
   environment.sessionVariables = rec {
