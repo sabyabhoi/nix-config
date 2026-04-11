@@ -38,7 +38,7 @@
       protontricks.enable = true;
     };
     hyprland.enable = true;
-    thunar.enable = true;
+    thunar.enable = false;
   };
 
   # List packages installed in system profile. To search, run:

@@ -14,5 +14,11 @@
       vim = "nvim";
       dots = "cd $userfiles/dotfiles";
     };
+    plugins = [
+      {
+        name = "plugin-git";
+        src = pkgs.fishPlugins.plugin-git.src;
+      }
+    ];
   };
 }

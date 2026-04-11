@@ -36,8 +36,10 @@
       };
     };
     extraConfig = ''
+      theme "catppuccin-mocha"
       load_plugins {
         autolock
+        compact-bar
       }
     '';
   };

@@ -45,7 +45,7 @@
       pnpm
       postman
       prismlauncher
-      protonvpn-gui
+      proton-vpn
       qpwgraph
       ripgrep
       ruff
@@ -53,7 +53,7 @@
       slurp
       spotify
       swayidle
-      swww
+      awww
       tealdeer
       tmux
       vesktop
@@ -72,6 +72,11 @@
       (import ../scripts/clean.nix {inherit pkgs;})
       (import ../scripts/update.nix {inherit pkgs;})
     ];
+
+  gtk = {
+    enable = true;
+    colorScheme = "dark";
+  };
 
   programs = {
     codex = {

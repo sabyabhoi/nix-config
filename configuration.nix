@@ -73,7 +73,6 @@
     XDG_STATE_HOME = "$HOME/.local/state";
 
     HYPRSHOT_DIR = "/tmp";
-    GTK_THEME = "Adwaita-dark";
     NIXOS_OZONE_WL = "1";
     EDITOR = "nvim";
     VISUAL = "nvim";
