@@ -8,6 +8,7 @@
     ./modules/home-modules/hyprland.nix
     ./modules/home-modules/zellij.nix
     ./modules/home-modules/stylix.nix
+    ./modules/home-modules/fish.nix
     # ./modules/home-modules/kitty.nix
     # ./modules/home-modules/lf.nix
     ./modules/home-modules/dunst.nix
