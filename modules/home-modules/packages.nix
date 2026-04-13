@@ -7,18 +7,16 @@
 
   home.packages = with pkgs;
     [
-      godot
-      niri
-      noctalia-shell
       ardour
+      awww
       # brave
       btop
       # calibre
       ctags
       dconf
       delta
+      devenv
       fd
-      qbittorrent
       feh
       ffmpeg
       fh
@@ -28,6 +26,7 @@
       gdu
       gimp
       gnome-font-viewer
+      godot
       grim
       # guitarix
       # guvcview
@@ -39,6 +38,8 @@
       lazygit
       # libreoffice
       ngrok
+      niri
+      noctalia-shell
       nodejs_24
       obsidian
       pavucontrol
@@ -46,6 +47,7 @@
       postman
       prismlauncher
       proton-vpn
+      qbittorrent
       qpwgraph
       ripgrep
       ruff
@@ -53,7 +55,6 @@
       slurp
       spotify
       swayidle
-      awww
       tealdeer
       tmux
       vesktop

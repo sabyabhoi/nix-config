@@ -5,22 +5,12 @@
 }: {
   virtualisation = {
     libvirtd = {
-      enable = false;
-      # qemu = {
-      #   package = pkgs.qemu_kvm;
-      #   runAsRoot = true;
-      #   swtpm.enable = true;
-      #   ovmf = {
-      #     enable = false;
-      #     packages = [
-      #       (pkgs.OVMF.override {
-      #         secureBoot = true;
-      #         tpmSupport = true;
-      #       })
-      #       .fd
-      #     ];
-      #   };
-      # };
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+      };
     };
     docker = {
       enable = true;
