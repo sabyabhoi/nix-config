@@ -12,7 +12,7 @@
     };
 
     stevenblack = {
-      enable = false;
+      enable = true;
       block = ["porn" "fakenews"];
     };
 

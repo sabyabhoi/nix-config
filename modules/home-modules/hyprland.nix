@@ -82,7 +82,7 @@
           # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
           allow_tearing = false
 
-          layout = dwindle
+          layout = scrolling
       }
 
       # https://wiki.hyprland.org/Configuring/Variables/#decoration
@@ -129,6 +129,12 @@
       dwindle {
           pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
           preserve_split = true # You probably want this
+      }
+
+      scrolling {
+          fullscreen_on_one_column = true
+          column_width = 0.9
+          direction = right
       }
 
       # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
@@ -200,6 +206,15 @@
       bind = $mainMod, p, pseudo, # dwindle
       bind = $mainMod, v, togglesplit, # dwindle
 
+      bind = $mainMod, period, layoutmsg, move +col
+      bind = $mainMod, comma, layoutmsg, move -col
+      bind = $mainMod SHIFT, period, layoutmsg, swapcol r
+      bind = $mainMod SHIFT, comma, layoutmsg, swapcol l
+
+      # Or focus next window
+      bind = $mainMod, mouse_up, layoutmsg, focus r
+      bind = $mainMod, mouse_down, layoutmsg, focus l
+
       bind = $mainMod, h, movefocus, l
       bind = $mainMod, l, movefocus, r
       bind = $mainMod, k, movefocus, u
@@ -252,8 +267,8 @@
       bind = $mainMod SHIFT, S, movetoworkspace, special:magic
 
       # Scroll through existing workspaces with mainMod + scroll
-      bind = $mainMod, mouse_down, workspace, e+1
-      bind = $mainMod, mouse_up, workspace, e-1
+      # bind = $mainMod, mouse_down, workspace, e+1
+      # bind = $mainMod, mouse_up, workspace, e-1
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = $mainMod, mouse:272, movewindow

@@ -28,7 +28,7 @@
       gnome-font-viewer
       godot
       grim
-      # guitarix
+      guitarix
       # guvcview
       httpie-desktop
       hyprshot
