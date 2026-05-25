@@ -31,6 +31,19 @@
       laststatus = 3;
     };
 
+    autoCmd = [
+      {
+        event = "FileType";
+        pattern = "rust";
+        desc = "Rust uses 100-char line guide (rustfmt default)";
+        callback.__raw = ''
+          function()
+            vim.opt_local.colorcolumn = "100"
+          end
+        '';
+      }
+    ];
+
     diagnostic.settings = {
       virtual_text = false;
       update_in_insert = true;
