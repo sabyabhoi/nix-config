@@ -7,6 +7,7 @@
 
   home.packages = with pkgs;
     [
+      nmap
       ardour
       awww
       # brave
@@ -36,7 +37,7 @@
       # jetbrains.idea-community-bin
       jq
       lazygit
-      # libreoffice
+      libreoffice
       ngrok
       niri
       noctalia-shell

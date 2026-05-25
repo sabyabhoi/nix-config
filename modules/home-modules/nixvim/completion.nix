@@ -19,6 +19,15 @@
       lsp = {
         enable = true;
         inlayHints = false;
+        postConfig = ''
+          vim.diagnostic.config({
+            float = {
+              focusable = true,
+              border = "single",
+              source = "always",
+            },
+          })
+        '';
         servers = {
           clangd.enable = true;
           gopls.enable = true;
