@@ -35,13 +35,18 @@
     channel.enable = false;
     settings = {
       experimental-features = ["nix-command flakes"];
-      substituters = ["https://nix-community.cachix.org/"];
+      substituters = [
+        "https://cache.nixos.org"
+        "https://nix-community.cachix.org"
+        "https://devenv.cachix.org"
+      ];
       trusted-public-keys = [
+        "cache.nixos.org-1:6NCHCSMMTM0UlKoUV7jOiap7VP0YsUPk7Egr3t6KY6s="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "devenv.cachix.org-1:EpJVZb1wF/uY21WYSO5Q/WE8s+5gX7I/YNG0Nc6Y3o="
       ];
       trusted-users = ["root" "sabyabhoi"];
       builders-use-substitutes = true;
-      auto-optimise-store = true;
     };
   };
 
