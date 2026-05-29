@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -78,6 +79,7 @@
   gtk = {
     enable = true;
     colorScheme = "dark";
+    gtk4.theme = config.gtk.theme;
   };
 
   programs = {
@@ -114,6 +116,7 @@
     };
     firefox = {
       enable = true;
+      configPath = ".mozilla/firefox";
       profiles = {
         my-profile = {};
       };
