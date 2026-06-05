@@ -5,7 +5,6 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    configType = "hyprlang";
     extraConfig = ''
       # This is an example Hyprland config file.
       # Refer to the wiki for more information.
@@ -24,7 +23,7 @@
       monitor=,preferred,auto,auto
 
       render {
-        cm_fs_passthrough = 0
+        # cm_fs_passthrough = 0
         cm_auto_hdr = 0
 
         direct_scanout = 2 # Better performance for fullscreen games
@@ -128,7 +127,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle {
-          pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+          # pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
           preserve_split = true # You probably want this
       }
 
@@ -205,7 +204,7 @@
       bind = $mainMod, t, togglefloating,
       bind = $mainMod, space, exec,vicinae open
       bind = $mainMod, p, pseudo, # dwindle
-      bind = $mainMod, v, togglesplit, # dwindle
+      # bind = $mainMod, v, togglesplit, # dwindle
 
       bind = $mainMod, period, layoutmsg, move +col
       bind = $mainMod, comma, layoutmsg, move -col

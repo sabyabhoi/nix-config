@@ -33,7 +33,7 @@
           gopls.enable = true;
           elixirls.enable = true;
           intelephense = {
-            enable = true;
+            enable = false;
             package = null;
           };
           phpactor = {
@@ -44,13 +44,14 @@
               ];
             };
           };
-          zls.enable = true;
+          zls.enable = false;
           jdtls.enable = false;
           ocamllsp = {
-            enable = true;
+            enable = false;
             package = null;
           };
           metals.enable = false; # for scala
+          ols.enable = true; # odin
           rust_analyzer = {
             enable = true;
             autostart = true;
@@ -58,7 +59,7 @@
             installRustc = false;
             settings.cargo.features = "all";
           };
-          gleam.enable = true;
+          gleam.enable = false;
           pyright.enable = true;
           pest_ls = {
             enable = false;
