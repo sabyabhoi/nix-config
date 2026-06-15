@@ -114,10 +114,7 @@
       enableFishIntegration = true;
     };
     firefox = {
-      enable = true;
-      profiles = {
-        my-profile = {};
-      };
+      enable = false;
     };
     direnv = {
       enable = true;
