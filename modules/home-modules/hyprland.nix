@@ -5,313 +5,192 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    extraConfig = ''
-      # This is an example Hyprland config file.
-      # Refer to the wiki for more information.
-      # https://wiki.hyprland.org/Configuring/Configuring-Hyprland/
 
-      # Please note not all available settings / options are set here.
-      # For a full list, see the wiki
-
-      ################
-      ### MONITORS ###
-      ################
-
-      # See https://wiki.hyprland.org/Configuring/Monitors/
-      monitor=DP-2,2560x1440 @144,0x0,1
-      monitor=HDMI-A-1,1920x1080 @60,2560x0,1
-      monitor=,preferred,auto,auto
-
-      render {
-        # cm_fs_passthrough = 0
-        cm_auto_hdr = 0
-
-        direct_scanout = 2 # Better performance for fullscreen games
-      }
-
-      ###################
-      ### MY PROGRAMS ###
-      ###################
-
-      # See https://wiki.hyprland.org/Configuring/Keywords/
-
-      # Set programs that you use
-      $terminal = ghostty
-
-      #################
-      ### AUTOSTART ###
-      #################
-
-      # Autostart necessary processes (like notifications daemons, status bars, etc.)
-      # Or execute your favorite apps at launch like this:
-
-      # exec-once = $terminal
-      # exec-once = nm-applet &
-      exec-once = waybar
-      exec-once = awww-daemon --format xrgb
-
-      #############################
-      ### ENVIRONMENT VARIABLES ###
-      #############################
-
-      # See https://wiki.hyprland.org/Configuring/Environment-variables/
-
-      env = XCURSOR_SIZE,24
-      env = HYPRCURSOR_SIZE,24
-
-      #####################
-      ### LOOK AND FEEL ###
-      #####################
-
-      # Refer to https://wiki.hyprland.org/Configuring/Variables/
-
-      # https://wiki.hyprland.org/Configuring/Variables/#general
-      general {
-          gaps_in = 5
-          gaps_out = 15
-
-          border_size = 1
-
-          # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-          # col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-          # col.inactive_border = rgba(595959aa)
-
-          # Set to true enable resizing windows by clicking and dragging on borders and gaps
-          resize_on_border = true
-
-          # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
-          allow_tearing = false
-
-          layout = scrolling
-      }
-
-      # https://wiki.hyprland.org/Configuring/Variables/#decoration
-      decoration {
-          rounding = 10
-
-          # Change transparency of focused and unfocused windows
-          active_opacity = 1.0
-          inactive_opacity = 1.0
-
-          # drop_shadow = true
-          # shadow_range = 4
-          # shadow_render_power = 3
-          # col.shadow = rgba(1a1a1aee)
-
-          # https://wiki.hyprland.org/Configuring/Variables/#blur
-          blur {
-              enabled = false
-              size = 3
-              passes = 1
-
-              vibrancy = 0.1696
-          }
-      }
-
-      # https://wiki.hyprland.org/Configuring/Variables/#animations
-      animations {
-        enabled = yes
-        bezier = fast, 0.05, 0.0, 0.05, 1.0
-
-        # very fast window slide
-        animation = windows, 1, 1, fast, slide
-        animation = windowsIn, 1, 1, fast, slide
-        animation = windowsOut, 1, 1, fast, slide
-
-        # fast workspace switch
-        animation = workspaces, 1, 2, fast, slide
-        animation = fade, 1, 1, fast
-        animation = fadeIn, 1, 1, fast
-        animation = fadeOut, 1, 1, fast
-      }
-
-      # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-      dwindle {
-          # pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-          preserve_split = true # You probably want this
-      }
-
-      scrolling {
-          fullscreen_on_one_column = true
-          column_width = 0.9
-          direction = right
-      }
-
-      # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-      # master {
-      #     new_is_master = true
-      # }
-
-      # https://wiki.hyprland.org/Configuring/Variables/#misc
-      misc {
-          force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
-          disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
-      }
-
-      #############
-      ### INPUT ###
-      #############
-
-      # https://wiki.hyprland.org/Configuring/Variables/#input
-      input {
-          kb_layout = us,us
-          kb_variant = ,colemak
-          kb_model =
-          kb_options = caps:escape,ctrl:swap_lalt_lctl,grp:alt_space_toggle
-          kb_rules =
-
-          repeat_delay = 200
-          repeat_rate = 25
-
-          follow_mouse = 1
-
-          sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-
-          touchpad {
-              natural_scroll = false
-          }
-      }
-
-      # https://wiki.hyprland.org/Configuring/Variables/#gestures
-      # gestures {
-      #     workspace_swipe = false
-      # }
-
-      # Example per-device config
-      # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
-      device {
-          name = epic-mouse-v1
-          sensitivity = -0.5
-      }
-
-      # Example per-device config
-      # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
-
-      ####################
-      ### KEYBINDINGSS ###
-      ####################
-
-      # See https://wiki.hyprland.org/Configuring/Keywords/
-      $mainMod = SUPER # Sets "Windows" key as main modifier
-
-      # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      bind = SUPER_SHIFT, space, exec, hyprctl switchxkblayout sino-wealth-gaming-kb--keyboard next
-      bind = $mainMod, Return, exec, $terminal
-      bind = SUPER_SHIFT, Q, killactive,
-      bind = $mainMod, f, fullscreen,
-      bind = SUPER_SHIFT, E, exit,
-      bind = $mainMod, E, exec,emacsclient -c
-      bind = $mainMod, t, togglefloating,
-      bind = $mainMod, space, exec,vicinae open
-      bind = $mainMod, p, pseudo, # dwindle
-      # bind = $mainMod, v, togglesplit, # dwindle
-
-      bind = $mainMod, period, layoutmsg, move +col
-      bind = $mainMod, comma, layoutmsg, move -col
-      bind = $mainMod SHIFT, period, layoutmsg, swapcol r
-      bind = $mainMod SHIFT, comma, layoutmsg, swapcol l
-
-      # Or focus next window
-      bind = $mainMod, mouse_up, layoutmsg, focus r
-      bind = $mainMod, mouse_down, layoutmsg, focus l
-
-      bind = $mainMod, h, movefocus, l
-      bind = $mainMod, l, movefocus, r
-      bind = $mainMod, k, movefocus, u
-      bind = $mainMod, j, movefocus, d
-      bind = $mainMod, up, movefocus, u
-      bind = $mainMod, down, movefocus, d
-
-      bind = $mainMod SHIFT, h, movewindow, l
-      bind = $mainMod SHIFT, l, movewindow, r
-      bind = $mainMod SHIFT, k, movewindow, u
-      bind = $mainMod SHIFT, j, movewindow, d
-      bind = $mainMod SHIFT, up, movewindow, u
-      bind = $mainMod SHIFT, down, movewindow, d
-
-      bind = $mainMod SHIFT, x, exec, systemctl suspend
-
-      # bind = , code:66, exec, hyprctl dispatch sendkeystate , Escape, down, activewindow
-      # bind = , code:66, exec, hyprctl dispatch sendkeystate , Escape, up, activewindow
-
-      bind = CTRL, space, exec, dunstctl close
-      bind = $mainMod CTRL, l, movecurrentworkspacetomonitor, r
-      bind = $mainMod CTRL, h, movecurrentworkspacetomonitor, l
-
-      # Switch workspaces with mainfMod + [0-9]
-      bind = $mainMod, 1, workspace, 1
-      bind = $mainMod, 2, workspace, 2
-      bind = $mainMod, 3, workspace, 3
-      bind = $mainMod, 4, workspace, 4
-      bind = $mainMod, 5, workspace, 5
-      bind = $mainMod, 6, workspace, 6
-      bind = $mainMod, 7, workspace, 7
-      bind = $mainMod, 8, workspace, 8
-      bind = $mainMod, 9, workspace, 9
-      bind = $mainMod, 0, workspace, 10
-
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      bind = $mainMod SHIFT, 1, movetoworkspace, 1
-      bind = $mainMod SHIFT, 2, movetoworkspace, 2
-      bind = $mainMod SHIFT, 3, movetoworkspace, 3
-      bind = $mainMod SHIFT, 4, movetoworkspace, 4
-      bind = $mainMod SHIFT, 5, movetoworkspace, 5
-      bind = $mainMod SHIFT, 6, movetoworkspace, 6
-      bind = $mainMod SHIFT, 7, movetoworkspace, 7
-      bind = $mainMod SHIFT, 8, movetoworkspace, 8
-      bind = $mainMod SHIFT, 9, movetoworkspace, 9
-      bind = $mainMod SHIFT, 0, movetoworkspace, 10
-
-      # Example special workspace (scratchpad)
-      bind = $mainMod, S, togglespecialworkspace, magic
-      bind = $mainMod SHIFT, S, movetoworkspace, special:magic
-
-      # Scroll through existing workspaces with mainMod + scroll
-      # bind = $mainMod, mouse_down, workspace, e+1
-      # bind = $mainMod, mouse_up, workspace, e-1
-
-      # Move/resize windows with mainMod + LMB/RMB and dragging
-      bindm = $mainMod, mouse:272, movewindow
-      bindm = $mainMod, mouse:273, resizewindow
-
-      binde =, XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 10%+
-      binde =, XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 10%-
-      bindl =, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-
-      binde =, XF86MonBrightnessDown, exec, brightnessctl s 10%-
-      binde =, XF86MonBrightnessUp, exec, brightnessctl s +10%
-
-      binde = $mainMod, Print, exec, hyprshot -m region
-      binde = , Print, exec, hyprshot -m active -m window
-
-      ##############################
-      ### WINDOWS AND WORKSPACES ###
-      ##############################
-
-      # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-      # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
-
-      # Example windowrule v1
-      # windowrule = float, ^(kitty)$
-
-      # Example windowrule v2
-      # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-
-      windowrule {
-        name = windowrule-1
-        suppress_event = maximize
-        match:class = .* # You'll probably like this.
-      }
-
-      windowrule {
-        name = windowrule-2
-        no_initial_focus = on
-        no_focus = on
-        no_follow_mouse = on
-        match:class = jetbrains-idea-ce
-        match:title = ^win(.*)
-      }
-    '';
+    settings = {
+      monitor = [
+        "DP-2,2560x1440@144,0x0,1"
+        "HDMI-A-1,1920x1080@60,2560x0,1"
+        ",preferred,auto,auto"
+      ];
+
+      render = {
+        cm_auto_hdr = 0;
+        direct_scanout = 2;
+      };
+
+      "$terminal" = "ghostty";
+      "$mainMod" = "SUPER";
+
+      exec-once = [
+        "waybar"
+        "awww-daemon --format xrgb"
+      ];
+
+      env = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+      ];
+
+      general = {
+        gaps_in = 5;
+        gaps_out = 15;
+        border_size = 1;
+        resize_on_border = true;
+        allow_tearing = false;
+        layout = "scrolling";
+      };
+
+      decoration = {
+        rounding = 10;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
+        blur = {
+          enabled = false;
+          size = 3;
+          passes = 1;
+          vibrancy = 0.1696;
+        };
+      };
+
+      animations = {
+        enabled = true;
+        bezier = "fast, 0.05, 0.0, 0.05, 1.0";
+        animation = [
+          "windows, 1, 1, fast, slide"
+          "windowsIn, 1, 1, fast, slide"
+          "windowsOut, 1, 1, fast, slide"
+          "workspaces, 1, 2, fast, slide"
+          "fade, 1, 1, fast"
+          "fadeIn, 1, 1, fast"
+          "fadeOut, 1, 1, fast"
+        ];
+      };
+
+      dwindle = {
+        preserve_split = true;
+      };
+
+      scrolling = {
+        fullscreen_on_one_column = true;
+        column_width = 0.9;
+        direction = "right";
+      };
+
+      misc = {
+        force_default_wallpaper = -1;
+        disable_hyprland_logo = false;
+      };
+
+      input = {
+        kb_layout = "us,us";
+        kb_variant = ",colemak";
+        kb_model = "";
+        kb_options = "caps:escape,ctrl:swap_lalt_lctl,grp:alt_space_toggle";
+        kb_rules = "";
+        repeat_delay = 200;
+        repeat_rate = 25;
+        follow_mouse = 1;
+        sensitivity = 0;
+        touchpad = {
+          natural_scroll = false;
+        };
+      };
+
+      device = {
+        name = "epic-mouse-v1";
+        sensitivity = -0.5;
+      };
+
+      bind = [
+        "SUPER_SHIFT, space, exec, hyprctl switchxkblayout sino-wealth-gaming-kb--keyboard next"
+        "$mainMod, Return, exec, $terminal"
+        "SUPER_SHIFT, Q, killactive,"
+        "$mainMod, f, fullscreen,"
+        "SUPER_SHIFT, E, exit,"
+        "$mainMod, E, exec, emacsclient -c"
+        "$mainMod, t, togglefloating,"
+        "$mainMod, space, exec, vicinae open"
+        "$mainMod, p, pseudo,"
+        "$mainMod, period, layoutmsg, move +col"
+        "$mainMod, comma, layoutmsg, move -col"
+        "$mainMod SHIFT, period, layoutmsg, swapcol r"
+        "$mainMod SHIFT, comma, layoutmsg, swapcol l"
+        "$mainMod, mouse_up, layoutmsg, focus r"
+        "$mainMod, mouse_down, layoutmsg, focus l"
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"
+        "$mainMod SHIFT, h, movewindow, l"
+        "$mainMod SHIFT, l, movewindow, r"
+        "$mainMod SHIFT, k, movewindow, u"
+        "$mainMod SHIFT, j, movewindow, d"
+        "$mainMod SHIFT, up, movewindow, u"
+        "$mainMod SHIFT, down, movewindow, d"
+        "$mainMod SHIFT, x, exec, systemctl suspend"
+        "CTRL, space, exec, dunstctl close"
+        "$mainMod CTRL, l, movecurrentworkspacetomonitor, r"
+        "$mainMod CTRL, h, movecurrentworkspacetomonitor, l"
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
+        "$mainMod, S, togglespecialworkspace, magic"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      ];
+
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+
+      binde = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 10%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 10%-"
+        "$mainMod, Print, exec, hyprshot -m region"
+        ", Print, exec, hyprshot -m active -m window"
+      ];
+
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl s +10%"
+      ];
+
+      windowrule = [
+        {
+          name = "windowrule-1";
+          suppress_event = "maximize";
+          "match:class" = ".*";
+        }
+        {
+          name = "windowrule-2";
+          no_initial_focus = "on";
+          no_focus = "on";
+          no_follow_mouse = "on";
+          "match:class" = "jetbrains-idea-ce";
+          "match:title" = "^win(.*)";
+        }
+      ];
+    };
   };
 
   services = {

@@ -31,6 +31,7 @@ in {
           go = ["gofmt"];
           zig = ["zigfmt"];
           gleam = ["gleamfmt"];
+          odin = ["odinfmt"];
 
           javascript = jsLikeFormatter;
           javascriptreact = jsLikeFormatter;

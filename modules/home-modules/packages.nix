@@ -67,6 +67,7 @@
       zathura
       # zed-editor
       zip
+      tiled
     ]
     ++ [
       (import ../scripts/fonts.nix {inherit pkgs;})

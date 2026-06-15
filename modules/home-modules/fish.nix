@@ -56,13 +56,14 @@
       lg = "lazygit";
       ls = "eza";
       cat = "bat";
-    };
 
-    plugins = [
-      {
-        name = "plugin-git";
-        src = pkgs.fishPlugins.plugin-git.src;
-      }
-    ];
+      # git
+      gpr = "git pull --rebase";
+      gst = "git status";
+      glo = "git log --oneline";
+      ga = "git add";
+      gc = "git commit";
+      gd = "git diff";
+    };
   };
 }
