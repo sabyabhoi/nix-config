@@ -107,6 +107,7 @@
         "SUPER_SHIFT, Q, killactive,"
         "$mainMod, f, fullscreen,"
         "SUPER_SHIFT, E, exit,"
+        "$mainMod, z, exec, handy --toggle-transcription"
         "$mainMod, E, exec, emacsclient -c"
         "$mainMod, t, togglefloating,"
         "$mainMod, space, exec, vicinae open"

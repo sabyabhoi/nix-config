@@ -5,6 +5,7 @@
 }: {
   programs.nixvim = {
     plugins = {
+      fff.enable = true;
       avante = {
         enable = true;
         settings = {
