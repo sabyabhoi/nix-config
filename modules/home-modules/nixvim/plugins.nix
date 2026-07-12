@@ -25,6 +25,20 @@
         settings = {
           maximum_time = 2000;
           testcases_directory = "./testcases";
+          compile_command = {
+            cpp = {
+              args = [
+                "-DLOCAL"
+                "$(FNAME)"
+                "-o"
+                "$(FNOEXT)"
+                "-Wall"
+                "-std=c++23"
+                "-Wextra"
+              ];
+              exec = "g++";
+            };
+          };
         };
         luaConfig.post = ''
           local map = vim.keymap.set

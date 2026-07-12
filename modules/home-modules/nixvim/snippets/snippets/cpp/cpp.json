@@ -331,5 +331,41 @@
       "};"
     ],
     "description": "Segment Tree"
+  },
+
+  "point": {
+    "prefix": [
+      "point"
+    ],
+    "body": [
+      "struct Point {",
+      "  int x, y;",
+      "};",
+      "",
+      "Point invert(const Point& other) { return Point{other.y, other.x}; }",
+      "",
+      "Point operator+(const Point& a, const Point& b) {",
+      "  return {a.x + b.x, a.y + b.y};",
+      "}",
+      "",
+      "Point operator-(const Point& a) { return {-a.x, -a.y}; }",
+      "",
+      "Point operator-(const Point& a, const Point& b) {",
+      "  return {a.x - b.x, a.y - b.y};",
+      "}",
+      "",
+      "Point operator*(const Point& a, const Point& b) {",
+      "  return {a.x * b.x, a.y * b.y};",
+      "}",
+      "",
+      "bool operator<(const Point& a, const Point& b) {",
+      "  return tie(a.x, a.y) < tie(b.x, b.y);",
+      "}",
+      "",
+      "bool operator==(const Point& a, const Point& b) {",
+      "  return a.x == b.x && a.y == b.y;",
+      "}"
+    ],
+    "description": "Point struct"
   }
 }

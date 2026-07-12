@@ -13,7 +13,7 @@
 
     stevenblack = {
       enable = true;
-      block = ["porn" "fakenews"];
+      block = ["fakenews"];
     };
 
     nameservers = [

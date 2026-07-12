@@ -7,6 +7,9 @@
 
   home.packages = with pkgs;
     [
+      guvcview
+      beyond-all-reason
+      zeroad
       handy
       nmap
       ardour
