@@ -91,10 +91,10 @@
     };
     brave = {
       enable = true;
-      commandLineArgs = [
-        "-enable-features=UseOzonePlatform"
-        "-ozone-platform=wayland"
-      ];
+      # commandLineArgs = [
+      #   "-enable-features=UseOzonePlatform"
+      #   "-ozone-platform=wayland"
+      # ];
     };
     vicinae = {
       enable = true;

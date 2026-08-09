@@ -46,6 +46,7 @@
   environment.systemPackages = with pkgs; [
     # android-tools
     # androidenv.androidPkgs.androidsdk
+    lm_sensors
     arandr
     bat
     bluez
