@@ -19,6 +19,9 @@
   ];
   home.username = "sabyabhoi";
   home.homeDirectory = "/home/sabyabhoi";
+  home.pointerCursor.enable = true;
+
+  programs.nixvim.nixpkgs.source = inputs.nixpkgs;
 
   home.stateVersion = "23.11";
 

@@ -224,13 +224,13 @@
       nui.enable = true;
       # codeium-nvim.enable = true;
       copilot-lua = {
-        enable = true;
+        enable = false;
         settings = {
           # suggestion = {enabled = true;};
           panel = {enabled = false;};
         };
       };
-      copilot-cmp.enable = true;
+      copilot-cmp.enable = false;
       nvim-ufo = {
         enable = true;
         settings.provider_selector = ''

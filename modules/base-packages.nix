@@ -52,7 +52,6 @@
     bluez
     bluez-tools
     brightnessctl
-    # busybox
     clang-tools
     coreutils-full
     gcc13
@@ -64,7 +63,6 @@
     libnotify
     man-pages
     mpv
-    # nnn
     pamixer
     python3
     python311Packages.ptpython
@@ -75,12 +73,6 @@
     wget
     xclip
     xwayland-satellite
-    # (pkgs.androidenv.emulateApp {
-    #   name = "emulate-MyAndroidApp";
-    #   platformVersion = "36";
-    #   abiVersion = "x86_64"; # armeabi-v7a, mips, x86_64
-    #   systemImageType = "google_apis_playstore";
-    # })
   ];
 
   fonts.packages = with pkgs; [

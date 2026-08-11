@@ -8,11 +8,11 @@
   home.packages = with pkgs;
     [
       guvcview
-      beyond-all-reason
-      zeroad
+      # beyond-all-reason
+      # zeroad
       handy
       nmap
-      ardour
+      # ardour
       awww
       # brave
       btop
@@ -31,11 +31,11 @@
       gdu
       gimp
       gnome-font-viewer
-      godot
+      # godot
       grim
       guitarix
       # guvcview
-      httpie-desktop
+      # httpie-desktop
       hyprshot
       imv
       # jetbrains.idea-community-bin
@@ -43,8 +43,8 @@
       lazygit
       libreoffice
       ngrok
-      niri
-      noctalia-shell
+      # niri
+      # noctalia-shell
       nodejs_24
       obsidian
       pavucontrol
@@ -71,7 +71,7 @@
       zathura
       # zed-editor
       zip
-      tiled
+      # tiled
     ]
     ++ [
       (import ../scripts/fonts.nix {inherit pkgs;})
@@ -86,20 +86,14 @@
   };
 
   programs = {
-    codex = {
-      enable = true;
-    };
     brave = {
       enable = true;
-      # commandLineArgs = [
-      #   "-enable-features=UseOzonePlatform"
-      #   "-ozone-platform=wayland"
-      # ];
     };
     vicinae = {
       enable = true;
       systemd = {
         enable = true;
+        autoStart = true;
       };
     };
     opencode = {

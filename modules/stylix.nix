@@ -6,6 +6,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
+    targets.regreet.enable = false;
 
     polarity = "dark";
 
