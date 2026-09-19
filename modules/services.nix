@@ -44,5 +44,9 @@
     openssh.enable = true;
     blueman.enable = true;
     syncthing.enable = false;
+    hardware.openrgb = {
+      enable = true;
+      motherboard = "amd";
+    };
   };
 }

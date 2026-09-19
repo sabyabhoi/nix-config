@@ -12,9 +12,10 @@
       # zeroad
       handy
       nmap
-      # ardour
+      ardour
       awww
       # brave
+      firefox
       btop
       # calibre
       ctags

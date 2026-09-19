@@ -64,6 +64,8 @@
       ga = "git add";
       gc = "git commit";
       gd = "git diff";
+      gb = "git branch";
+      gco = "git checkout";
     };
   };
 }
