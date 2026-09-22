@@ -70,7 +70,7 @@
       wine
       wl-clipboard
       zathura
-      # zed-editor
+      zed-editor
       zip
       # tiled
     ]
