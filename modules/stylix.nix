@@ -32,7 +32,7 @@
     # };
 
     cursor = {
-      size = 12;
+      size = 24;
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
     };
