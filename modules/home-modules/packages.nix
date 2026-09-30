@@ -7,15 +7,10 @@
 
   home.packages = with pkgs;
     [
-      guvcview
-      # beyond-all-reason
-      # zeroad
-      handy
-      nmap
       ardour
       awww
+      # beyond-all-reason
       # brave
-      firefox
       btop
       # calibre
       ctags
@@ -26,6 +21,7 @@
       feh
       ffmpeg
       fh
+      firefox
       font-awesome
       fzf
       gdb
@@ -36,6 +32,8 @@
       grim
       guitarix
       # guvcview
+      guvcview
+      handy
       # httpie-desktop
       hyprshot
       imv
@@ -43,8 +41,10 @@
       jq
       lazygit
       libreoffice
+      logseq
       ngrok
       # niri
+      nmap
       # noctalia-shell
       nodejs_24
       obsidian
@@ -62,6 +62,7 @@
       spotify
       swayidle
       tealdeer
+      # tiled
       tmux
       vesktop
       vlc
@@ -71,8 +72,8 @@
       wl-clipboard
       zathura
       zed-editor
+      # zeroad
       zip
-      # tiled
     ]
     ++ [
       (import ../scripts/fonts.nix {inherit pkgs;})
