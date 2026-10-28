@@ -58,15 +58,12 @@
   users.users.sabyabhoi = {
     isNormalUser = true;
     description = "Sabyasachi Bhoi";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render" "docker" "libvirtd" "kvm" "adbusers"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "storage" "render" "docker" "libvirtd" "kvm" "adbusers" "gamemode"];
     packages = [];
     shell = pkgs.fish;
   };
 
   environment.sessionVariables = rec {
-    VDPAU_DRIVER = "va_gl";
-    LIBVA_DRIVER_NAME = "iHD";
-
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_CACHE_HOME = "$HOME/.cache";
     XDG_DATA_HOME = "$HOME/.local/share";

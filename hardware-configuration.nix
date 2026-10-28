@@ -19,7 +19,6 @@
     kernel.sysctl."net.ipv4.tcp_congestion_control" = "bbr";
     extraModulePackages = [];
   };
-  powerManagement.cpuFreqGovernor = "schedutil";
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/68965b90-534c-4b1f-808f-a218904f1532";

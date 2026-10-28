@@ -37,6 +37,7 @@
       enable = true;
       protontricks.enable = true;
     };
+    gamemode.enable = true;
     hyprland.enable = true;
     thunar.enable = false;
   };

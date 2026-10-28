@@ -44,6 +44,7 @@
       lazygit
       libreoffice
       logseq
+      mangohud
       ngrok
       # niri
       nmap
