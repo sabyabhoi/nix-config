@@ -30,7 +30,7 @@
       gdu
       gimp
       gnome-font-viewer
-      # godot
+      godot
       grim
       guitarix
       # guvcview
